@@ -4,7 +4,7 @@
   "description": "portfolio site",
   "main": "server.js",
   "engines": {
-    "node": "*"
+    "node": "5.5.0"
   },
   "scripts": {
     "start": "node server.js"
