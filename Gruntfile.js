@@ -1,51 +1,23 @@
 module.exports = function(grunt) {
     grunt.initConfig({
+        // running `grunt less` will compile once
         less: {
             development: {
                 options: {
                     paths: ["./public/stylesheets"],
                     yuicompress: true
                 },
-                files: {
-                    "public/stylesheets/home.css": "public/stylesheets/home.less"
-                }
+            files: {
+                "./public/stylesheets/home.css": "./public/stylesheets/home.less"
             }
-        },
-        watch: {
-            files: "public/stylesheets/*",
-            tasks: ["less"]
         }
-    });
+    },
+    // running `grunt watch` will watch for changes
+    watch: {
+        files: "./public/stylesheets/*.less",
+        tasks: ["less"]
+    }
+});
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 };
-
-// module.exports = function(grunt) {
-//   require('jit-grunt')(grunt);
-
-//   grunt.initConfig({
-//     less: {
-//       development: {
-//         options: {
-//           compress: true,
-//           yuicompress: true,
-//           optimization: 2
-//         },
-//         files: {
-//           "public/stylesheets/home.css": "public/stylesheets/home.less" // destination file and source file
-//         }
-//       }
-//     },
-//     watch: {
-//       styles: {
-//         files: ['less/**/*.less'], // which files to watch
-//         tasks: ['less'],
-//         options: {
-//           nospawn: true
-//         }
-//       }
-//     }
-//   });
-
-//   grunt.registerTask('default', ['less', 'watch']);
-// };
