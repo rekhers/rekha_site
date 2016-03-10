@@ -10,6 +10,13 @@ app.get('/', function(req, res){
 	
 });
 
+
+app.get('/home', function(req, res){
+	res.render('test');
+	app.use("/public", express.static(__dirname + '/public'));
+	
+});
+
 var port = process.env.PORT || 5000;
    
 
