@@ -1,4 +1,5 @@
 	$(document).ready(function(){
+$(".sld").not(".active").hide();
 
 $(".typed-cursor").hide();
 
@@ -9,38 +10,31 @@ $("#words").typed({
 	contentType: 'html'
 });
 
-$( window ).resize(function() {
-  var pos = $("#mac").position();
-  $("#words").css("left", pos.left + 20).css("top", pos.top + 30);
+        //                    d3.select("mac") 
+        //                 .attr("viewBox", "0 0 300 500")
+        // .attr("preserveAspectRatio", "xMidYMid meet")
+
+setTimeout(function(){
+    $(".sld #one").hide();
+  $(".sld #two").show();
+}, 3000)
+
+setTimeout(function(){
+    $(".sld #two").hide();
+  $(".sld #three").show();
+}, 3000);
+
+
+
+$('.btn').click(function() {
+var id = $(this).attr("href");
+$(".sld").hide();
+$(id).show();
+
+    $('.active').removeClass('active');
+    $(this).addClass("active");
 });
 
-
-
-
-//TODO: change to add hover effects for the head div
-
-$("#imgHolder").hover(function(){
-	$("#headPic").css("opacity", '.75');
-		$("#imgHolder").css("opacity", '.85');
-
-}, function(){
-		$("#headPic").css("opacity", '.87');
-				$("#imgHolder").css("opacity", '1');
-
-})
-
-$("#headPic").hover(function(){
-		$("#headPic").css("opacity", '.75');
-
-	$("#imgHolder").css("opacity", '.85');
-}, function(){
-			$("#headPic").css("opacity", '.87');
-
-		$("#imgHolder").css("opacity", '1');
-
-})
-
-	// makeTree();
 
             buildTree(treeData, "#syntaxTree");
 	 
@@ -48,120 +42,11 @@ $("#headPic").hover(function(){
 
 
 
-// function makeTree(){
-// 	var treeData = [
-//   {
-//     "name": "S",
-//     "parent": "null",
-//     "children": [
-//       {
-//         "name": "NP1",
-//         "parent": "S",
-//         "children": [
-//           {
-//             "name": "N",
-//            	"text": "Rekha",
-//             "parent": "NP1"
-//           }
-//         ]
-//       },
-//       {
-//         "name": "VP",
-//         "parent": "S",
-//         "children": [
-//         	  {
-//             "name": "V",
-//             "text": "loves",
-//             "parent":"VP"
-//           }
-//         ]
-//       }
-//     ]
-//   }
-// ];
-
-// var width = 500,
-// height = 500;
-	
-// var i = 0;
-
-// var tree = d3.layout.tree()
-// 	.size([height, width]);
-
-// // var diagonal = d3.svg.diagonal()
-// // 	.projection(function(d) { return [d.x, d.y]; });
-
-// var line = d3.svg.line()
-//                  .x( function(point) { return point.lx; })
-//                  .y( function(point) { return point.ly; });
-// function lineData(d){
-//     // i'm assuming here that supplied datum 
-//     // is a link between 'source' and 'target'
-//     var points = [
-//         {lx: d.source.x, ly: d.source.y},
-//         {lx: d.target.x, ly: d.target.y}
-//     ];
-//     return line(points);
-// }
-
-
-// var svg = d3.select("#syntaxTree").append("svg")
-// 	.attr("width", width)
-// 	.attr("height", height)
-//   .append("g");
-
-// root = treeData[0];
-  
-// update(root);
-
-// function update(source) {
-
-//   // Compute the new tree layout.
-//   var nodes = tree.nodes(root).reverse(),
-// 	  links = tree.links(nodes);
-
-//   // Normalize for fixed-depth.
-//   nodes.forEach(function(d) { d.y = d.depth * 50; });
-
-//   // Declare the nodes…
-//   var node = svg.selectAll("g.node")
-// 	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
-
-//   // Enter the nodes.
-//   var nodeEnter = node.enter().append("g")
-// 	  .attr("class", "node")
-// 	  .attr("transform", function(d) { 
-// 		  return "translate(" + d.x + "," + d.y + ")"; });
-
-//   nodeEnter.append("circle")
-// 	  .attr("r", 10)
-// 	  .style("fill", "#fff");
-
-//   nodeEnter.append("text")
-// 	  .attr("y", function(d) { 
-// 		  return d.children || d._children ? -18 : 18; })
-// 	  .attr("dy", ".35em")
-// 	  .attr("text-anchor", "middle")
-// 	  .text(function(d) { return d.name; })
-// 	  .style("fill-opacity", 1);
-
-//   // Declare the links…
-//   var link = svg.selectAll("path.link")
-// 	  .data(links, function(d) { return d.target.id; });
-
-//   // Enter the links.
-//   link.enter().insert("path", "g")
-// 	  .attr("class", "link")
-// 	  .attr("d", lineData);
-
-// }
-
 
 
    function buildTree(treeData, treeContainerDom) {
-                var margin = { top: 30, right: 20, bottom: 20, left: 20 };
-                var width = 360 - margin.right - margin.left;
-                var height = 220 - margin.top - margin.bottom;
+                var width = 500,
+                 height = 350;
 
                 var i = 0, duration = 750;
                 var tree = d3.layout.tree()
@@ -169,24 +54,29 @@ $("#headPic").hover(function(){
                 var diagonal = d3.svg.diagonal()
                     .projection(function (d) { return [d.x, d.y]; });
                 var svg = d3.select(treeContainerDom).append("svg")
-                    .attr("width", width + margin.right + margin.left)
-                    .attr("height", height + margin.top + margin.bottom)
+                    .attr("width", function(){
+                        return "100%";
+                    })
+                    .attr("height", function(){
+                        return "75%";
+                    })
+                        .attr("viewBox", "0 0 500 500")
+        .attr("preserveAspectRatio", "xMidYMid meet")
                   .append("g")
-                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                    .attr("transform", "translate(" + 0 + "," + 20 + ")");
                 root = treeData;
 
                 update(root);
                 function update(source) {
-                    // Compute the new tree layout.
+
                     var nodes = tree.nodes(root).reverse(),
                         links = tree.links(nodes);
-                    // Normalize for fixed-depth.
-                    nodes.forEach(function (d) { d.y = d.depth * 100; });
 
-                    // Declare the nodes…
                     var node = svg.selectAll("g.node")
                         .data(nodes, function (d) { return d.id || (d.id = ++i); });
-                    // Enter the nodes.
+
+                    
+
                     var nodeEnter = node.enter().append("g")
                         .attr("class", "node")
                         .attr("transform", function (d) {
@@ -199,20 +89,47 @@ $("#headPic").hover(function(){
                         .style("fill", function (d) { return d.children || d._children ? "lightsteelblue" : "#fff"; });
                  
                     //set Depth
-                    nodes.forEach(function(d) { d.y = d.depth * 35; });
+                    nodes.forEach(function(d) { d.y = d.depth * 40; });
+
+                    nodeEnter.on("mouseover", function(d, i){
+                      if(!d.text){
+                        d3.select(this).append("circle")
+                              .attr("r", 12)
+                              .style("fill", "steelblue")
+                              .style("opacity", .2)
+                              .attr("class", function(d, i){
+                                return "ntcircle" + i;
+                              })
+
+
+                         d3.select(this).append("text")
+                              .attr("y", function(d){ return 0})
+                              .attr("x", function(d){return -10})
+                              .style("font-size", "1vw")
+                              .text(function(d){ return d.type;})
+                               .attr("class", function(d, i){
+                                return "nttext" + i;
+                              })
+                            }
+
+                      });
+                    nodeEnter.on("mouseout", function(d, i){
+
+                       d3.select(".ntcircle" + i).remove("circle");
+                        d3.select(".nttext" + i).remove();
+
+                      });
 
 
                     nodeEnter.append("text")
                         .attr("y", function (d) {
-                            return d.children || d._children ? -9 : 9;
+                            return d.children || d._children ? -10 : 10;
                         })
                         .attr("dy", ".35em")
                         .attr("text-anchor", "middle")
                         .text(function (d) { return d.text; })
                         .style("fill-opacity", 1e-6);
 
-
-                    
 
                     // Transition nodes to their new position.
                     //horizontal tree
@@ -279,20 +196,34 @@ $("#headPic").hover(function(){
                         d.children = d._children;
                         d._children = null;
                     }
+
+                      // nodeLabels.append("text")
+                      //   .attr("y", function (d) {
+                      //       return d.children || d._children ? -9 : 9;
+                      //   })
+                      //   .attr("dy", ".35em")
+                      //   .attr("text-anchor", "middle")
+                      //   .text(function (d) { return d.names; })
+                      //   .style("fill-opacity", 1e-6);
+
+
                     update(d);
                 }
             }
 
             var treeData = {
     "name": "S",
+    "type": "S",
     "parent": "null",
     "children": [
       {
         "name": "NP1",
+        "type": "NP",
         "parent": "S",
         "children": [
           {
             "name": "N",
+                    "type": "N",
              "text": "Rekha",
             "parent": "NP1"
           }
@@ -300,29 +231,38 @@ $("#headPic").hover(function(){
       },
       {
         "name": "VP",
+                "type": "VP",
         "parent": "S",
         "children": [
            {
             "name": "V",
+                    "type": "V",
             "text": "loves",
             "parent":"VP"
           },
           
             {
             "name": "NP2",
+                    "type": "NP",
             "parent":"VP",
             "children": [
               {
                 "name":"NP3",
+                        "type": "NP",
+
                 "parent":"NP2",
                 "children": [
                 {
                   "name": "D",
+                          "type": "D",
+
                   "text":"the",
                   "parent": "NP3"
                 },
                 {
                   "name":"N",
+                          "type": "N",
+
                   "text": "logic",
                   "parent":"NP3"
                 }
@@ -331,17 +271,47 @@ $("#headPic").hover(function(){
               },
               {
                 "name":"PP",
+                        "type": "PP",
+
                 "parent": "NP2",
+
                 "children": [
                   {
                     "name": "P",
+                            "type": "P",
+
                     "text":"of",
                     "parent": "PP"
                   },
                   {
-                    "name": "N",
+                    "name": "NP4",
+                            "type": "NP",
+
                     "parent": "PP",
-                    "text": "language"
+                    "children": [
+                      {
+                        "name":"adj",
+                                "type": "adj",
+
+                         "text": "natural",
+                         "parent": "NP4"
+                      },
+                      {"name": "NP5",
+                              "type": "NP",
+
+                        "parent":"NP4",
+                        "children":[
+                        {
+                          "name":"N2",
+                                  "type": "N",
+
+                          "text":"language",
+                          "parent":"NP5"
+                        }
+
+                        ]
+                    }
+                    ]
                   }
                 ]
               }
