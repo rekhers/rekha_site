@@ -14,31 +14,42 @@ $("#words").typed({
         //                 .attr("viewBox", "0 0 300 500")
         // .attr("preserveAspectRatio", "xMidYMid meet")
 
-setTimeout(function(){
-    $(".sld #one").hide();
-  $(".sld #two").show();
-}, 3000)
+// setTimeout(function(){
+//     $(".sld #one").hide();
+//   $(".sld #two").show();
+// }, 3000)
 
-setTimeout(function(){
-    $(".sld #two").hide();
-  $(".sld #three").show();
-}, 3000);
+// setTimeout(function(){
+//     $(".sld #two").hide();
+//   $(".sld #three").show();
+// }, 3000);
 
 
 
 $('.btn').hover(function() {
-var id = $(this).attr("href");
+var id = $(this).attr("id");
+console.log(id);
+if(id == "linguist"){
 $(".sld").hide();
-$(id).show();
+$(".slides #" + id).show();
 
     $('.active').removeClass('active');
     $(this).addClass("active");
+                makeChart();
+
+  } else{
+$(".sld").hide();
+$(".slides #" + id).show();
+
+    $('.active').removeClass('active');
+    $(this).addClass("active");
+
+  }
 });
 
 
             buildTree(treeData, "#syntaxTree");
 	           
-            makeChart();
 
 	});
 
@@ -47,8 +58,8 @@ $(id).show();
 
 
    function buildTree(treeData, treeContainerDom) {
-                var width = 500,
-                 height = 600;
+                var width = 400,
+                 height = 800;
 
                 var i = 0, duration = 750;
                 var tree = d3.layout.tree()
@@ -62,7 +73,7 @@ $(id).show();
                     .attr("height", function(){
                         return "100%";
                     })
-                        .attr("viewBox", "0 0 500 600")
+                        .attr("viewBox", "0 0 380 255")
         .attr("preserveAspectRatio", "xMidYMid meet")
                   .append("g")
                     .attr("transform", "translate(" + 0 + "," + 20 + ")");
@@ -91,7 +102,7 @@ $(id).show();
                         .style("fill", function (d) { return d.children || d._children ? "lightsteelblue" : "#fff"; });
                  
                     //set Depth
-                    nodes.forEach(function(d) { d.y = d.depth * 40; });
+                    nodes.forEach(function(d) { d.y = d.depth * 35; });
 
                     nodeEnter.on("mouseover", function(d, i){
                       if(!d.text){
@@ -100,7 +111,7 @@ $(id).show();
                               .style("fill", "steelblue")
                               .style("opacity", .2)
                               .attr("class", function(d, i){
-                                return "ntcircle" + i;
+                                return "ntcircle " + i;
                               })
 
 
@@ -110,15 +121,15 @@ $(id).show();
                               .style("font-size", "1vw")
                               .text(function(d){ return d.type;})
                                .attr("class", function(d, i){
-                                return "nttext" + i;
+                                return "nttext " + i;
                               })
                             }
 
                       });
                     nodeEnter.on("mouseout", function(d, i){
-
-                       d3.select(".ntcircle" + i).remove("circle");
-                        d3.select(".nttext" + i).remove();
+                        console.log("getting here?");
+                       d3.select(".ntcircle").remove();
+                        d3.selectAll(".nttext").remove();
 
                       });
 
@@ -338,13 +349,13 @@ height = 250;
 var svg =  d3.select("#bars")
     .append("svg")
 
-                // .attr("width", function(){
-                //         return "100%";
-                //     })
-                //     .attr("height", function(){
-                //         return "100%";
-                //     })
-                        .attr("viewBox", "0 0 200 100")
+                .attr("width", function(){
+                        return "100%";
+                    })
+                    .attr("height", function(){
+                        return "100%";
+                    })
+                        .attr("viewBox", "0 0 160 100")
         .attr("preserveAspectRatio", "xMidYMid meet")
               .append("g")
 
@@ -417,7 +428,7 @@ function r3down(){
   d3.select("#rect3")
     .transition()
     .ease("linear")
-    .duration(230)
+    .duration(220)
    .delay(280)
     .attr("height", 0)
     .each("end", r2down)

@@ -19,7 +19,7 @@ a:link, a:visited, a:hover, a:active {
 .wrapper {
   background-color: #454b59;
     width: 30vw;
-    height:auto;
+    height:40vh;
   margin-left:auto;
   margin-right: auto;
   box-shadow: 0 0 20px #222;
@@ -127,15 +127,15 @@ text-align:center;
 
 
    #words{
+
     font-family: "menlo-regular";
     font-size: .6vw;
     color: #7CFC00;
     width: 34vw;
     position: absolute;
-
-    left: 32%;
-    top: 55%;
-    z-index: 1000;
+    top: 57vh;
+    left: 32vw;
+    z-index: 6000;
 
     span{
       visibility: hidden;
@@ -176,10 +176,10 @@ text-align:center;
 
 
 #syntaxTree{
-  margin-top: 10%;
     z-index: 1000;
+    max-width: 400px;
+    max-height: 160px;
   svg{
-    margin-top: 5px;
 
 
       }
@@ -204,19 +204,26 @@ text-align:center;
 
 
 #bars{
-  max-width: 130px;
+  max-width: 45%;
+
+  margin-top:10vh;
+  max-height: 80%;
   // margin-left: .3vw;
     -webkit-transform: rotate(180deg); /* Safari */
     transform: rotate(180deg);
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 6vw;
     position: relative;
-    top: 1.5vh;
+    // top: 1.5vh;
     // margin-right: auto;
     svg{
+      z-index: 5;
       // margin-left: auto;
       // margin-right: auto;
   // background-color: gainsboro;
+}
+
+rect{
+  opacity: .7;
 }
 
 #rect1{

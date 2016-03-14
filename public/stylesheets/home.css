@@ -10,7 +10,7 @@
 .container-fluid .wrapper {
   background-color: #454b59;
   width: 30vw;
-  height: auto;
+  height: 40vh;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 0 20px #222;
@@ -86,9 +86,9 @@
   color: #7CFC00;
   width: 34vw;
   position: absolute;
-  left: 32%;
-  top: 55%;
-  z-index: 1000;
+  top: 57vh;
+  left: 32vw;
+  z-index: 6000;
   overflow: hidden;
   -webkit-animation: type 5s steps(100, end) infnite;
   animation: type 5s steps(50, end) infinite;
@@ -113,11 +113,9 @@
   color: #FFF;
 }
 .container-fluid #syntaxTree {
-  margin-top: 10%;
   z-index: 1000;
-}
-.container-fluid #syntaxTree svg {
-  margin-top: 5px;
+  max-width: 400px;
+  max-height: 160px;
 }
 .container-fluid #syntaxTree .node circle {
   cursor: pointer;
@@ -135,14 +133,20 @@
   shape-rendering: crispEdges;
 }
 .container-fluid #bars {
-  max-width: 130px;
+  max-width: 45%;
+  margin-top: 10vh;
+  max-height: 80%;
   -webkit-transform: rotate(180deg);
   /* Safari */
   transform: rotate(180deg);
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 6vw;
   position: relative;
-  top: 1.5vh;
+}
+.container-fluid #bars svg {
+  z-index: 5;
+}
+.container-fluid #bars rect {
+  opacity: .7;
 }
 .container-fluid #bars #rect1 {
   fill: #002F4B;
