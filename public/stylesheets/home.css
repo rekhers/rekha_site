@@ -114,8 +114,8 @@
 }
 .container-fluid #syntaxTree {
   z-index: 1000;
-  max-width: 400px;
-  max-height: 160px;
+  max-width: 100%;
+  max-height: 80%;
 }
 .container-fluid #syntaxTree .node circle {
   cursor: pointer;
