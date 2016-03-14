@@ -48,7 +48,7 @@
   margin-left: auto;
   width: 11vw;
   height: 11vw;
-  border-radius: 90px;
+  border-radius: 75%;
   border: 1px solid gainsboro;
   background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
   margin-top: 5vh;
