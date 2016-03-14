@@ -11,6 +11,10 @@ a:link, a:visited, a:hover, a:active {
   text-decoration: none; 
 }
 
+.typed-cursor{
+  display: none;
+}
+
 
 .wrapper {
   background-color: #454b59;
@@ -18,26 +22,30 @@ a:link, a:visited, a:hover, a:active {
     height:auto;
   margin-left:auto;
   margin-right: auto;
-  box-shadow: 0 0 25px #222;
-  margin-top: 2vh;
+  box-shadow: 0 0 20px #222;
+  margin-top: 5vh;
   overflow: hidden;
   margin-bottom: 5%;
     }
 
 
     .btn {
+      z-index: 2000;
       text-decoration:none;
       color:#FFF;
-      font-weight: 500;
+      font-weight: 400;
       font-size: .9vw;
         width: 33.3333%;
       float: left;
+        font-family: 'Roboto', sans-serif;
+
       text-decoration: none;
       text-align: center;
        .active {
             font-weight: bold;
-             background: #ccc;
+             // background: #ccc;
              opacity: .5;
+             color: yellow !important;
             }
 
         }
@@ -109,24 +117,24 @@ text-align:center;
 
 
   #mac{
-        // margin-top: -10vh;
-        // margin-left: 25vw;
-
-        width: 18vw;
-
+   
+        position: relative;
+        top: -6%;
+        width: 50%;
+        height: 90%;
   }
 
 
 
    #words{
     font-family: "menlo-regular";
-    font-size: 1vw;
+    font-size: .6vw;
     color: #7CFC00;
     width: 34vw;
     position: absolute;
 
-    // left: 19%;
-    // top: 28%;
+    left: 32%;
+    top: 55%;
     z-index: 1000;
 
     span{
@@ -169,8 +177,6 @@ text-align:center;
 
 #syntaxTree{
   margin-top: 10%;
-    max-width: 700px;
-    margin:auto;
     z-index: 1000;
   svg{
     margin-top: 5px;
@@ -179,7 +185,7 @@ text-align:center;
       }
   .node circle {
     cursor: pointer;
-    stroke: steelblue;
+    stroke: #FFF;
     stroke-width: 3px;
   }
 
@@ -195,7 +201,41 @@ text-align:center;
     shape-rendering: crispEdges;
   }
 }
+
+
+#bars{
+  max-width: 130px;
+  // margin-left: .3vw;
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 1.5vh;
+    // margin-right: auto;
+    svg{
+      // margin-left: auto;
+      // margin-right: auto;
+  // background-color: gainsboro;
+}
+
+#rect1{
+  fill:#002F4B;
+
+}
+#rect2{
+  fill: #6E3838;
+}
+
+#rect3{
+  fill:#DC4225;
+
+}
   
+}
+
+
+
 
 }
 

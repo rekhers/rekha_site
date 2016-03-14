@@ -4,8 +4,8 @@ $(".sld").not(".active").hide();
 $(".typed-cursor").hide();
 
 $("#words").typed({
-	strings: [">> sudo npm install <br> >> node app.js"],
-	typeSpeed: 80,
+	strings: [">> sudo npm install <br> >> node server.js"],
+	typeSpeed: 100,
 	loop: true,
 	contentType: 'html'
 });
@@ -26,7 +26,7 @@ setTimeout(function(){
 
 
 
-$('.btn').click(function() {
+$('.btn').hover(function() {
 var id = $(this).attr("href");
 $(".sld").hide();
 $(id).show();
@@ -37,7 +37,9 @@ $(id).show();
 
 
             buildTree(treeData, "#syntaxTree");
-	 
+	           
+            makeChart();
+
 	});
 
 
@@ -46,7 +48,7 @@ $(id).show();
 
    function buildTree(treeData, treeContainerDom) {
                 var width = 500,
-                 height = 350;
+                 height = 600;
 
                 var i = 0, duration = 750;
                 var tree = d3.layout.tree()
@@ -58,9 +60,9 @@ $(id).show();
                         return "100%";
                     })
                     .attr("height", function(){
-                        return "75%";
+                        return "100%";
                     })
-                        .attr("viewBox", "0 0 500 500")
+                        .attr("viewBox", "0 0 500 600")
         .attr("preserveAspectRatio", "xMidYMid meet")
                   .append("g")
                     .attr("transform", "translate(" + 0 + "," + 20 + ")");
@@ -323,6 +325,121 @@ $(id).show();
       }
 
 
+
+
+function makeChart(){
+if($("#bars").has("svg")){
+  $("#bars svg").remove();
+}  
+
+var width = 130,
+height = 250;
+  
+var svg =  d3.select("#bars")
+    .append("svg")
+
+                // .attr("width", function(){
+                //         return "100%";
+                //     })
+                //     .attr("height", function(){
+                //         return "100%";
+                //     })
+                        .attr("viewBox", "0 0 200 100")
+        .attr("preserveAspectRatio", "xMidYMid meet")
+              .append("g")
+
+
+svg.append("rect")
+   .attr("x", 0)
+   .attr("y", 0)
+   .attr("height", 0)
+   .attr("width", 40)
+   .attr("id", "rect1")
+         
+ svg.append("rect")
+   .attr("x", 45)
+   .attr("y", 0)
+   .attr("height", 0)
+   .attr("width", 40)
+    .attr("id", "rect2")
+
+ 
+  svg.append("rect")
+   .attr("x", 90)
+   .attr("y", 0)
+   .attr("height", 0)
+   .attr("width", 40)
+   .attr("id", "rect3")
+
+  
+    r1up();
+  
+}
+  
+
+
+function r1up(){
+  d3.select("#rect1")
+    .transition()
+    .ease("linear")
+    .duration(900)
+    .delay(50)
+    .attr("height", 50)
+    .each("start", r2up)
+
+}
+
+
+function r2up(){
+  d3.select("#rect2")
+    .transition()
+     .ease("linear")
+    .duration(880)
+    .attr("height", 150)
+    .each("start", r3up)
+
+  
+}
+
+
+function r3up(){
+  d3.select("#rect3")
+    .transition()
+    .ease("linear")
+    .duration(860)
+    .attr("height", 250)
+    .each("start", r3down)
+
+
+}
+
+function r3down(){
+  d3.select("#rect3")
+    .transition()
+    .ease("linear")
+    .duration(230)
+   .delay(280)
+    .attr("height", 0)
+    .each("end", r2down)
+}
+
+function r2down(){
+  d3.select("#rect2")
+    .transition()
+    .ease("linear")
+    .duration(220)
+    .attr("height", 0)
+    .each("end", r1down)
+}
+
+function r1down(){
+  d3.select("#rect1")
+    .transition()
+        .ease("linear")
+    .duration(210)
+    .attr("height", 0)
+    .each("end", r1up)
+}
 
 
 
