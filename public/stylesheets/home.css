@@ -123,7 +123,7 @@
   stroke-width: 3px;
 }
 .container-fluid #syntaxTree .node text {
-  font: 1.2vw sans-serif;
+  font: 0.9vw sans-serif;
   fill: #FFF;
 }
 .container-fluid #syntaxTree .link {
