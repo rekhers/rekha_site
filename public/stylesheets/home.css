@@ -70,7 +70,7 @@
   text-align: center;
 }
 .container-fluid #titles {
-  font-size: 1.1vw;
+  font-size: 1.7vw;
   color: #293244;
   text-align: center;
 }
@@ -82,12 +82,10 @@
 }
 .container-fluid #words {
   font-family: "menlo-regular";
-  font-size: .6vw;
+  font-size: .45vw;
   color: #7CFC00;
-  width: 34vw;
+  width: 8vw;
   position: absolute;
-  top: 57vh;
-  left: 32vw;
   z-index: 6000;
   overflow: hidden;
   -webkit-animation: type 5s steps(100, end) infnite;

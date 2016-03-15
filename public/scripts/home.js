@@ -10,6 +10,17 @@ $("#words").typed({
 	contentType: 'html'
 });
 
+
+      var wid = $(".wrapper").outerWidth() - $("#mac").position.left;
+      var hei = $(".wrapper").outerHeight() - $("#mac").position.top;
+      var pos = $("#mac").position();
+
+        $("#words").css({
+        position: "absolute",
+        top: hei + "px",
+        left: wid + "px"
+    }).show();
+
         //                    d3.select("mac") 
         //                 .attr("viewBox", "0 0 300 500")
         // .attr("preserveAspectRatio", "xMidYMid meet")
@@ -24,6 +35,29 @@ $("#words").typed({
 //   $(".sld #three").show();
 // }, 3000);
 
+
+var resizeTimer;
+
+$(window).on('resize', function(e) {
+
+  $("#words").hide();
+
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+      var wid = $(".wrapper").outerWidth() - $("#mac").outerWidth();
+      var hei = $(".wrapper").outerHeight() - $("#mac").outerHeight;
+      var pos = $("#mac").position();
+
+        $("#words").css({
+        position: "absolute",
+        top: hei + "px",
+        left: wid + "px"
+    }).show();
+
+            
+  }, 250);
+
+});
 
 
 $('.btn').hover(function() {
@@ -95,7 +129,17 @@ $(".slides #" + id).show();
                         .attr("transform", function (d) {
                             return "translate(" + source.x0 + "," + source.y0 + ")";
                         })
-                      .on("click", nodeclick);
+                      .on("click", function(d){
+                          nodeClick(d);
+    d3.select(this).append("text")
+                              .attr("y", function(d){ return 0})
+                              .attr("x", function(d){return -10})
+                              .style("font-size", "1vw")
+                              .text(function(d){ return d.type;})
+                               .attr("class", function(d, i){
+                                return "nttext " + i;
+                              })
+                      });
                     nodeEnter.append("circle")
                      .attr("r", 4)
                         .attr("stroke", function (d) { return d.children || d._children ? "steelblue" : "#00c13f"; })
@@ -104,39 +148,31 @@ $(".slides #" + id).show();
                     //set Depth
                     nodes.forEach(function(d) { d.y = d.depth * 35; });
 
-                    nodeEnter.on("mouseover", function(d, i){
-                      if(!d.text){
-                        d3.select(this).append("circle")
-                              .attr("r", 12)
-                              .style("fill", "steelblue")
-                              .style("opacity", .2)
-                              .attr("class", function(d, i){
-                                return "ntcircle " + i;
-                              })
+                    // nodeEnter.on("mouseover", function(d, i){
+                      // if(d._children){
+        
+                      //    d3.select(this).append("text")
+                      //         .attr("y", function(d){ return 0})
+                      //         .attr("x", function(d){return -10})
+                      //         .style("font-size", "1vw")
+                      //         .text(function(d){ return d.type;})
+                      //          .attr("class", function(d, i){
+                      //           return "nttext " + i;
+                      //         })
+                      //       }
 
+                    //   });
+                    // nodeEnter.on("mouseout", function(d, i){
+                    //     console.log("getting here?");
+                    //    d3.select(".ntcircle").remove();
+                    //     d3.selectAll(".nttext").remove();
 
-                         d3.select(this).append("text")
-                              .attr("y", function(d){ return 0})
-                              .attr("x", function(d){return -10})
-                              .style("font-size", "1vw")
-                              .text(function(d){ return d.type;})
-                               .attr("class", function(d, i){
-                                return "nttext " + i;
-                              })
-                            }
-
-                      });
-                    nodeEnter.on("mouseout", function(d, i){
-                        console.log("getting here?");
-                       d3.select(".ntcircle").remove();
-                        d3.selectAll(".nttext").remove();
-
-                      });
+                    //   });
 
 
                     nodeEnter.append("text")
                         .attr("y", function (d) {
-                            return d.children || d._children ? -10 : 10;
+                            return d.children || d._children ? -11 : 11;
                         })
                         .attr("dy", ".35em")
                         .attr("text-anchor", "middle")
