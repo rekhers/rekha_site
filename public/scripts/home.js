@@ -28,21 +28,6 @@ $("#words").typed({
 
 
 
-        //                    d3.select("mac") 
-        //                 .attr("viewBox", "0 0 300 500")
-        // .attr("preserveAspectRatio", "xMidYMid meet")
-
-// setTimeout(function(){
-//     $(".sld #one").hide();
-//   $(".sld #two").show();
-// }, 3000)
-
-// setTimeout(function(){
-//     $(".sld #two").hide();
-//   $(".sld #three").show();
-// }, 3000);
-
-
 var resizeTimer;
 
 $(window).on('resize', function(e) {
@@ -81,7 +66,7 @@ $(".slides #" + id).show();
 
     $('.active').removeClass('active');
     $(this).addClass("active");
-                makeChart();
+                buildTree(treeData, "#syntaxTree");
 
   } else{
 $(".sld").hide();
@@ -94,8 +79,8 @@ $(".slides #" + id).show();
 });
 
 
-            buildTree(treeData, "#syntaxTree");
-	           
+	                           makeChart();
+
 
 	});
 
@@ -104,6 +89,10 @@ $(".slides #" + id).show();
 
 
    function buildTree(treeData, treeContainerDom) {
+
+              if($("#syntaxTree").has("svg")){
+                $("#syntaxTree svg").remove();
+              }
                 var width = 400,
                  height = 800;
 
@@ -142,7 +131,7 @@ $(".slides #" + id).show();
                             return "translate(" + source.x0 + "," + source.y0 + ")";
                         })
                       .on("click", function(d){
-                          nodeClick(d);
+                          nodeclick(d);
     d3.select(this).append("text")
                               .attr("y", function(d){ return 0})
                               .attr("x", function(d){return -10})
