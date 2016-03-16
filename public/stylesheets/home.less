@@ -92,7 +92,6 @@ img{
  background: -webkit-linear-gradient(#dc4225, #002f4b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
 // margin-left: 36vw;
@@ -197,6 +196,11 @@ text-align:center;
     stroke-width: 2px;
     shape-rendering: crispEdges;
   }
+
+  .ntLabels{
+    stroke: steelblue;
+    font-size: 15px;
+  }
 }
 
 
@@ -223,6 +227,10 @@ rect{
   opacity: .7;
 }
 
+rect:hover{
+  opacity:.3;
+}
+
 #rect1{
   fill:#002F4B;
 
@@ -238,7 +246,26 @@ rect{
   
 }
 
+#separator{
 
+    background-color: green;
+
+      svg {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+      }
+
+      path {
+        fill: none;
+        stroke: black;
+        stroke-width: 0.1px;
+      }
+
+}
 
 
 }

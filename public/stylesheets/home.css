@@ -131,6 +131,10 @@
   stroke-width: 2px;
   shape-rendering: crispEdges;
 }
+.container-fluid #syntaxTree .ntLabels {
+  stroke: steelblue;
+  font-size: 15px;
+}
 .container-fluid #bars {
   max-width: 45%;
   margin-top: 10vh;
@@ -147,6 +151,9 @@
 .container-fluid #bars rect {
   opacity: .7;
 }
+.container-fluid #bars rect:hover {
+  opacity: .3;
+}
 .container-fluid #bars #rect1 {
   fill: #002F4B;
 }
@@ -155,4 +162,20 @@
 }
 .container-fluid #bars #rect3 {
   fill: #DC4225;
+}
+.container-fluid #separator {
+  background-color: green;
+}
+.container-fluid #separator svg {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.container-fluid #separator path {
+  fill: none;
+  stroke: black;
+  stroke-width: 0.1px;
 }
