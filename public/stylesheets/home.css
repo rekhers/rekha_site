@@ -84,7 +84,8 @@
   font-family: "menlo-regular";
   font-size: .45vw;
   color: #7CFC00;
-  width: 8vw;
+  width: 8.5vw;
+  margin-bottom: 10vh;
   position: absolute;
   z-index: 6000;
   overflow: hidden;

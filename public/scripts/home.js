@@ -9,17 +9,24 @@ $("#words").typed({
 	loop: true,
 	contentType: 'html'
 });
+    var pixAdj = $("wrapper").outerHeight() * .05;
+    var rAdj = $("wrapper").outerWidth() * .05;
+
+      var l = $("#mac").position.left;
+      var t = $("#mac").position.top;
+
+   
+
+   $( "#words" ).position({
+        of: $( "#mac" ),
+        my: "right"+rAdj+ " center",
+        at: "center center" - pixAdj,
+        within: "#mac"
+      });
+
+           $("#words").show();
 
 
-      var wid = $(".wrapper").outerWidth() - $("#mac").position.left;
-      var hei = $(".wrapper").outerHeight() - $("#mac").position.top;
-      var pos = $("#mac").position();
-
-        $("#words").css({
-        position: "absolute",
-        top: hei + "px",
-        left: wid + "px"
-    }).show();
 
         //                    d3.select("mac") 
         //                 .attr("viewBox", "0 0 300 500")
@@ -44,17 +51,22 @@ $(window).on('resize', function(e) {
 
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(function() {
-      var wid = $(".wrapper").outerWidth() - $("#mac").outerWidth();
-      var hei = $(".wrapper").outerHeight() - $("#mac").outerHeight;
-      var pos = $("#mac").position();
+  var pixAdj = $("wrapper").outerHeight() * .30;
+    var rAdj = $("wrapper").outerWidth() * .05;
 
-        $("#words").css({
-        position: "absolute",
-        top: hei + "px",
-        left: wid + "px"
-    }).show();
+      var l = $("#mac").position.left;
+      var t = $("#mac").position.top;
 
-            
+   
+
+   $( "#words" ).position({
+        of: $( "#mac" ),
+        my: "right"+rAdj+ " center",
+        at: "center center" - pixAdj,
+        within: "#mac"
+      });
+
+           $("#words").show();
   }, 250);
 
 });
