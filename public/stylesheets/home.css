@@ -1,3 +1,25 @@
+.navbar {
+  background: transparent !important;
+  border-bottom: 2px solid #a83d2e  !important;
+}
+.navbar #aniRekha {
+  width: 3vw;
+  float: left;
+  margin-top: 3%;
+  vertical-align: center;
+  margin-right: 2vw;
+}
+.navbar .navbar-brand {
+  color: black !important;
+  opacity: .4 !important;
+  font-weight: 600;
+}
+.navbar li a {
+  text-decoration: none !important;
+  color: #2e3343 !important;
+  opacity: .7;
+  font-weight: 500;
+}
 .container-fluid a:link,
 .container-fluid a:visited,
 .container-fluid a:hover,
@@ -51,7 +73,7 @@
   border-radius: 75%;
   border: 1px solid gainsboro;
   background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-  margin-top: 5vh;
+  margin-top: 12vh;
 }
 .container-fluid #headHolder img {
   opacity: .65;
@@ -163,19 +185,17 @@
 .container-fluid #bars #rect3 {
   fill: #DC4225;
 }
-.container-fluid #separator {
-  background-color: green;
-}
 .container-fluid #separator svg {
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: -1;
+  z-index: -100;
 }
 .container-fluid #separator path {
   fill: none;
-  stroke: black;
-  stroke-width: 0.1px;
+  stroke: gainsboro;
+  stroke-width: .38px;
+  opacity: .7;
 }
