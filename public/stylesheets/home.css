@@ -88,7 +88,7 @@
   border-radius: 75%;
   border: 1px solid gainsboro;
   background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-  margin-top: 8%;
+  margin-top: 5%;
 }
 .container-fluid #headHolder img {
   opacity: .65;
@@ -113,7 +113,7 @@
 }
 .container-fluid #mac {
   position: relative;
-  top: -6%;
+  top: -7vh;
   width: 50%;
   height: 90%;
 }
@@ -122,7 +122,10 @@
   font-size: .45vw;
   color: #7CFC00;
   width: 8.5vw;
-  position: absolute;
+  height: 5vh;
+  left: 10vw;
+  top: 10vh;
+  position: relative;
   z-index: 6000;
   overflow: hidden;
   -webkit-animation: type 5s steps(100, end) infnite;
@@ -178,7 +181,7 @@
   -webkit-transform: rotate(180deg);
   /* Safari */
   transform: rotate(180deg);
-  margin-left: 6vw;
+  margin-left: 7vw;
   position: relative;
 }
 .container-fluid #bars svg {
@@ -215,11 +218,11 @@
 .container-fluid #about {
   height: 100%;
   width: 100%;
-  background: gray;
-  background: linear-gradient(to right bottom, gainsboro 50%, gray 50%);
+  background: #454b59;
+  background: linear-gradient(to right bottom, gainsboro 50%, #454b59 50%);
 }
 .container-fluid #contact {
-  height: 40%;
+  height: 20%;
   width: 100%;
-  background-color: #454b59;
+  background-color: white;
 }

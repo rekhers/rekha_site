@@ -4,8 +4,6 @@ $(document).ready(function(){
 
 makeNav();
 
-$(".sld").not(".active").hide();
-
 $(".typed-cursor").hide();
 
 $("#words").typed({
@@ -14,23 +12,6 @@ $("#words").typed({
 	loop: true,
 	contentType: 'html'
 });
-    var pixAdj = $("wrapper").outerHeight() * .05;
-    var rAdj = $("wrapper").outerWidth() * .05;
-
-      var l = $("#mac").position.left;
-      var t = $("#mac").position.top;
-
-   
-
-   // $( "#words" ).position({
-   //      of: $( "#mac" ),
-   //      my: "right"+rAdj+ " center",
-   //      at: "center center" - pixAdj,
-   //      within: "#mac"
-   //    });
-
-   //         $("#words").show();
-
 
 
 var resizeTimer;
@@ -38,6 +19,7 @@ var resizeTimer;
 $(window).on('resize', function(e) {
 
   // $("#words").hide();
+
 
   // clearTimeout(resizeTimer);
   // resizeTimer = setTimeout(function() {
@@ -61,8 +43,27 @@ $(window).on('resize', function(e) {
 });
 
 
+//set home to active 
+d3.select("#homeCircle").classed("activeCircle", true)
+d3.select("#homeLbl").classed("scrollTextStyle", true)
 
-//home Box handler
+
+
+
+                            homeBox()
+	                           makeChart();
+                            buildSeparator();
+
+                 
+
+	});
+
+
+function homeBox(){
+
+
+$(".sld").not(".active").hide();
+
 $('.btn').hover(function() {
 var id = $(this).attr("id");
 console.log(id);
@@ -83,41 +84,7 @@ $(".slides #" + id).show();
 
   }
 });
-
-
-// d3.select("#homeCircle").classed("activeCircle", true)
-// d3.select("#homeLbl").classed("scrollTextStyle", true)
-
-// $("#homeCircle").addClass("activeCircle");
-// $("#homeLbl").addClass("scrollTextStyle");
-
-
-
-
-
-	                           makeChart();
-                            buildSeparator();
-
-
-     //about section animation
-     
-//      $('#about').click(function(e) {
-//       console.log("getting here");
-//     var posX = $(this).offset().left, posY = $(this).offset().top;
-    
-//     posX = e.pageX - posX;
-//     posY = e.pageY - posY;
-    
-//     var pos = posX + posY;
-    
-//     if (pos > 200) {
-//         $('#about').removeClass('bottomRight').toggleClass('topLeft');
-//     } else if (pos<201) {
-//        $('#about').removeClass('topLeft').toggleClass('bottomRight');
-//     }
-// });                       
-
-	});
+}
 
 
 
@@ -177,9 +144,23 @@ navLine.append("text")
          .attr("id", "textLbl")
 
 
-              var type = $(".row-fluid").attr("id");
 
-              console.log(type);
+         d3.selectAll("circle")
+            .on("click", function(){
+              var id = d3.select(this).attr("id");
+              var idshort = id.slice(0, -6);
+              $("")
+            })
+
+           d3.selectAll(".navText")
+            .on("click", function(){
+              var id = d3.select(this).attr("id");
+              var idshort = id.slice(0, -3);
+              console.log(idshort);
+            })
+
+
+
 
   // d3.selectAll("#navigation circle")
   //   .on("mouseover", function(){
@@ -251,12 +232,31 @@ d3.selectAll("#homeLbl").classed("scrollTextStyle", true)
 
 d3.selectAll("#homeCircle").classed("activeCircle", true)
 
+      }
 
-        //        $("circle").css("fill", "white");
-        // $("#homeCircle").css("fill", "gray");
-        //         $("#homeLbl").css("stroke", "#FFF");
-        //                 $("#homeLbl").css("fill", "#FFF");
+    if($(this).scrollTop()>=$('#projects').position().top - half){
 
+
+d3.selectAll("circle").classed("activeCircle", false);
+d3.selectAll(".navText").classed("scrollTextStyle", false);
+
+
+d3.selectAll("#projectsLbl").classed("scrollTextStyle", true)
+
+d3.selectAll("#projectsCircle").classed("activeCircle", true)
+
+      }
+
+          if($(this).scrollTop()>=$('#projects').position().top - half/5){
+
+
+d3.selectAll("circle").classed("activeCircle", false);
+d3.selectAll(".navText").classed("scrollTextStyle", false);
+
+
+d3.selectAll("#contactLbl").classed("scrollTextStyle", true)
+
+d3.selectAll("#contactCircle").classed("activeCircle", true)
 
       }
 
