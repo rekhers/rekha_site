@@ -1,4 +1,9 @@
-	$(document).ready(function(){
+$(document).ready(function(){
+
+
+
+makeNav();
+
 $(".sld").not(".active").hide();
 
 $(".typed-cursor").hide();
@@ -17,14 +22,14 @@ $("#words").typed({
 
    
 
-   $( "#words" ).position({
-        of: $( "#mac" ),
-        my: "right"+rAdj+ " center",
-        at: "center center" - pixAdj,
-        within: "#mac"
-      });
+   // $( "#words" ).position({
+   //      of: $( "#mac" ),
+   //      my: "right"+rAdj+ " center",
+   //      at: "center center" - pixAdj,
+   //      within: "#mac"
+   //    });
 
-           $("#words").show();
+   //         $("#words").show();
 
 
 
@@ -32,30 +37,32 @@ var resizeTimer;
 
 $(window).on('resize', function(e) {
 
-  $("#words").hide();
+  // $("#words").hide();
 
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
-  var pixAdj = $("wrapper").outerHeight() * .30;
-    var rAdj = $("wrapper").outerWidth() * .05;
+  // clearTimeout(resizeTimer);
+  // resizeTimer = setTimeout(function() {
+  // var pixAdj = $("wrapper").outerHeight() * .30;
+  //   var rAdj = $("wrapper").outerWidth() * .05;
 
-      var l = $("#mac").position.left;
-      var t = $("#mac").position.top;
+  //     var l = $("#mac").position.left;
+  //     var t = $("#mac").position.top;
 
    
-   $( "#words" ).position({
-        of: $( "#mac" ),
-        my: "right"+rAdj+ " center",
-        at: "center center" - pixAdj,
-        within: "#mac"
-      });
+  //  $( "#words" ).position({
+  //       of: $( "#mac" ),
+  //       my: "right"+rAdj+ " center",
+  //       at: "center center" - pixAdj,
+  //       within: "#mac"
+  //     });
 
-           $("#words").show();
-  }, 250);
+  //          $("#words").show();
+  // }, 250);
 
 });
 
 
+
+//home Box handler
 $('.btn').hover(function() {
 var id = $(this).attr("id");
 console.log(id);
@@ -78,11 +85,183 @@ $(".slides #" + id).show();
 });
 
 
+// d3.select("#homeCircle").classed("activeCircle", true)
+// d3.select("#homeLbl").classed("scrollTextStyle", true)
+
+// $("#homeCircle").addClass("activeCircle");
+// $("#homeLbl").addClass("scrollTextStyle");
+
+
+
+
+
 	                           makeChart();
                             buildSeparator();
 
+
+     //about section animation
+     
+//      $('#about').click(function(e) {
+//       console.log("getting here");
+//     var posX = $(this).offset().left, posY = $(this).offset().top;
+    
+//     posX = e.pageX - posX;
+//     posY = e.pageY - posY;
+    
+//     var pos = posX + posY;
+    
+//     if (pos > 200) {
+//         $('#about').removeClass('bottomRight').toggleClass('topLeft');
+//     } else if (pos<201) {
+//        $('#about').removeClass('topLeft').toggleClass('bottomRight');
+//     }
+// });                       
+
 	});
 
+
+
+  function makeNav(){
+
+    var navLine = d3.select("#navigation")
+                          .append("g")
+                          // .attr("viewBox", "0 0 1000 255")
+                          // .attr("preserveAspectRatio", "xMidYMid meet")
+
+
+
+var cx1 = d3.select("#homeCircle").attr("cx"),
+cy1 = d3.select("#homeCircle").attr("cy");
+
+var cx2 = d3.select("#aboutCircle").attr("cx"),
+cy2 = d3.select("#aboutCircle").attr("cy");
+
+var cx3 = d3.select("#projectsCircle").attr("cx"),
+cy3 = d3.select("#projectsCircle").attr("cy");
+
+var cx4 = d3.select("#contactCircle").attr("cx"),
+cy4 = d3.select("#contactCircle").attr("cy");
+
+
+
+
+navLine.append("text")
+        .text("home")
+        .attr("x", cx1 - 15)
+        .attr("y", parseInt(cy1) + 5)
+        .attr("class", "navText")
+        .attr("id", "homeLbl")
+
+
+
+        navLine.append("text")
+        .text("about")
+        .attr("x", cx2 - 15)
+        .attr("y", parseInt(cy2) + 5)
+        .attr("class", "navText")
+        .attr("id", "aboutLbl")
+
+
+   navLine.append("text")
+        .text("projects")
+        .attr("x", cx3 - 20)
+        .attr("y", parseInt(cy3) + 5)
+        .attr("class", "navText")
+         .attr("id", "projectsLbl")
+
+   navLine.append("text")
+        .text("contact")
+        .attr("x", cx4 - 20)
+        .attr("y", parseInt(cy4) + 5)
+        .attr("class", "navText")
+         .attr("id", "textLbl")
+
+
+              var type = $(".row-fluid").attr("id");
+
+              console.log(type);
+
+  // d3.selectAll("#navigation circle")
+  //   .on("mouseover", function(){
+  //     if(d3.select(this).classed("activeCircle")){
+
+  //     d3.select(this)
+  //       .style("fill", "gainsboro");
+  //     }
+  //   })
+//     .on("mouseout", function(){
+// if(d3.select("#homeCircle").classed("activeCircle", false)){
+//       d3.select(this)
+//         .style("fill", "white");
+//     }
+//   })
+
+ // d3.selectAll("#homeLbl")
+ //    .on("mouseover", function(){
+ //      console.log("here?");
+ //      d3.select("#homeCircle")
+ //     .style("fill", "gainsboro");
+ //    })
+ //    .on("mouseout", function(){
+ //      if(d3.select("#homeCircle").classed("activeCircle")){
+ //      d3.select("#homeCircle")
+ //        .style("fill", "white");
+ //    }
+ //  })
+
+
+
+ // d3.selectAll("#aboutLbl")
+ //    .on("mouseover", function(){
+ //      console.log("here?");
+ //      d3.select("#aboutCircle")
+ //        .style("fill", "gainsboro");
+ //    })
+ //    .on("mouseout", function(){
+ //      if(d3.select("#aboutCircle").classed("activeCircle")){
+ //      d3.select("#aboutCircle")
+ //        .style("fill", "white");
+ //    }
+ //  })
+
+
+//scrollhandling
+var half = window.outerHeight/2;
+var scrollBottom = $(window).scrollTop() + $(window).height();
+
+
+$(document).scroll(function(){
+    if($(this).scrollTop()>=$('#about').position().top - half){
+      console.log("scrolllllll");
+d3.selectAll("circle").classed("activeCircle", false);
+d3.selectAll(".navText").classed("scrollTextStyle", false);
+
+
+d3.selectAll("#aboutCircle").classed("activeCircle", true)
+d3.selectAll("#aboutLbl").classed("scrollTextStyle", true)
+    }
+      if($(this).scrollTop()<=$('#about').position().top - half){
+
+
+d3.selectAll("circle").classed("activeCircle", false);
+d3.selectAll(".navText").classed("scrollTextStyle", false);
+
+
+d3.selectAll("#homeLbl").classed("scrollTextStyle", true)
+
+d3.selectAll("#homeCircle").classed("activeCircle", true)
+
+
+        //        $("circle").css("fill", "white");
+        // $("#homeCircle").css("fill", "gray");
+        //         $("#homeLbl").css("stroke", "#FFF");
+        //                 $("#homeLbl").css("fill", "#FFF");
+
+
+      }
+
+})
+  }
 
  var treeData = {
     "name": "S",
@@ -504,7 +683,7 @@ var vertices = d3.range(5000).map(function(d) {
 
 var delaunay = d3.geom.delaunay(vertices);
 
-var svg = d3.select("#separator")
+var svg = d3.select("#projects")
   .append("svg")
       // .attr("width", "100%")
       // .attr("height", "100%")
@@ -518,7 +697,17 @@ svg.append("g")
     .data(delaunay)
   .enter().append("path")
     .attr("class", function(d, i) { return "q" + (i % 9) + "-9"; })
-    .attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+    .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+    .on("mouseover", function(d){
+
+      d3.select(this)
+        .attr("class", "selectedTriangle")
+    })
+    .on("mouseout", function(){
+
+      d3.select(this)
+        .classed("selectedTriangle", false)
+    })
 }
 
 

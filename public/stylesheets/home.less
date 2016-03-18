@@ -4,42 +4,60 @@
 @sublime-pink: #F92672;
 @sublime-blue:#66D9EF;
 
+#home{
+  height: 100%;
+}
 
-.navbar{
-  #aniRekha{
-    width: 3vw;
-    float: left;
-    margin-top: 3%;
-vertical-align: center;
-    margin-right: 2vw;
+.navText{
+  // stroke-width: .5;
+  fill: #b53f2c;
+  stroke-width: .2;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
+#navigation{
+  z-index: 5000;
+  position: fixed;
+  top: 5vh;
+  left: 80vw;
+  height: 120%;
+  stroke: #b53f2c;
+
+
+  circle{
+    stroke: #b53f2c;
+    fill: white;
+    cursor: pointer;
+    stroke-width: 4px;
   }
 
-  background: transparent !important;
-  // background: rgba(49, 51, 66, 0.71)!important;
-  // background-image: linear-gradient(to bottom right,gainsboro,#313342) !important;
-  // opacity: .5;
+  .activeCircle{
+   stroke: #b53f2c;
+    fill: gainsboro;
+    cursor: pointer;
+    stroke-width: 4px;
 
-  .navbar-brand{
-    color: black !important;
-    opacity: .4 !important;
-    font-weight: 600;
   }
 
-  li{
-    a{
-      text-decoration: none !important;
-    color: #2e3343 !important;
-    opacity: .7;
-    font-weight: 500;
-  }
+  .scrollTextStyle{
+    fill: #FFF;
+    stroke: #FFF;
+
   }
 
-  // border-bottom: 2px solid #a83d2e  !important;
-  border-bottom: 2px solid #a83d2e  !important;
+
+
+
+
 
 }
 
 .container-fluid{
+
+margin: 0 !important;
+padding: 0 !important;
 
 a:link, a:visited, a:hover, a:active {
   text-decoration: none; 
@@ -109,9 +127,7 @@ a:link, a:visited, a:hover, a:active {
   border: 1px solid gainsboro;
   background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
     // background-image: linear-gradient(to bottom right,black,#434343);
-
-  // margin-left: 40vw;
-  margin-top: 12vh;
+  margin-top: 8%;
 
 img{
   opacity: .65;
@@ -165,7 +181,7 @@ text-align:center;
     font-size: .45vw;
     color: #7CFC00;
     width: 8.5vw;
-    margin-bottom: 10vh;
+    // margin-bottom: 10vh;
     position:absolute;
     z-index: 6000;
 
@@ -282,30 +298,43 @@ rect:hover{
   
 }
 
-#separator{
-
-    // background-color: green;
-
+#projects{
+    // background: gba(0, 0, 0, 0.25);
+  height: 100%;
+  width: 100%;
       svg {
         height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
+    
         width: 100%;
-        z-index: -100;
+        // z-index: -100;
       }
 
       path {
-        fill: none;
+
+        fill: rgba(0, 0, 0, 0.75);
         stroke: gainsboro;
-        stroke-width: .38px;
-        opacity: .7;
+        stroke-width: .3px;
       }
 
+      // .selectedTriangle{
+      //     fill:steelblue;
+      // }
+
 }
 
+#about {
+
+  height: 100%;
+  width: 100%;
+ background:gray;
+  background: linear-gradient(to right bottom, gainsboro 50%, gray 50%);
 
 }
 
+#contact{
+  height: 40%;
+width: 100%;
+background-color: #454b59;
+}
 
-
+}

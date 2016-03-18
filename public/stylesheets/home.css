@@ -1,24 +1,39 @@
-.navbar {
-  background: transparent !important;
-  border-bottom: 2px solid #a83d2e  !important;
+#home {
+  height: 100%;
 }
-.navbar #aniRekha {
-  width: 3vw;
-  float: left;
-  margin-top: 3%;
-  vertical-align: center;
-  margin-right: 2vw;
+.navText {
+  fill: #b53f2c;
+  stroke-width: .2;
+  font-size: 12px;
+  cursor: pointer;
 }
-.navbar .navbar-brand {
-  color: black !important;
-  opacity: .4 !important;
-  font-weight: 600;
+#navigation {
+  z-index: 5000;
+  position: fixed;
+  top: 5vh;
+  left: 80vw;
+  height: 120%;
+  stroke: #b53f2c;
 }
-.navbar li a {
-  text-decoration: none !important;
-  color: #2e3343 !important;
-  opacity: .7;
-  font-weight: 500;
+#navigation circle {
+  stroke: #b53f2c;
+  fill: white;
+  cursor: pointer;
+  stroke-width: 4px;
+}
+#navigation .activeCircle {
+  stroke: #b53f2c;
+  fill: gainsboro;
+  cursor: pointer;
+  stroke-width: 4px;
+}
+#navigation .scrollTextStyle {
+  fill: #FFF;
+  stroke: #FFF;
+}
+.container-fluid {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .container-fluid a:link,
 .container-fluid a:visited,
@@ -73,7 +88,7 @@
   border-radius: 75%;
   border: 1px solid gainsboro;
   background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-  margin-top: 12vh;
+  margin-top: 8%;
 }
 .container-fluid #headHolder img {
   opacity: .65;
@@ -107,7 +122,6 @@
   font-size: .45vw;
   color: #7CFC00;
   width: 8.5vw;
-  margin-bottom: 10vh;
   position: absolute;
   z-index: 6000;
   overflow: hidden;
@@ -185,17 +199,27 @@
 .container-fluid #bars #rect3 {
   fill: #DC4225;
 }
-.container-fluid #separator svg {
+.container-fluid #projects {
   height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
   width: 100%;
-  z-index: -100;
 }
-.container-fluid #separator path {
-  fill: none;
+.container-fluid #projects svg {
+  height: 100%;
+  width: 100%;
+}
+.container-fluid #projects path {
+  fill: rgba(0, 0, 0, 0.75);
   stroke: gainsboro;
-  stroke-width: .38px;
-  opacity: .7;
+  stroke-width: .3px;
+}
+.container-fluid #about {
+  height: 100%;
+  width: 100%;
+  background: gray;
+  background: linear-gradient(to right bottom, gainsboro 50%, gray 50%);
+}
+.container-fluid #contact {
+  height: 40%;
+  width: 100%;
+  background-color: #454b59;
 }
