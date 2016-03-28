@@ -1,267 +1,56 @@
-$(document).ready(function(){
-
-
-
-makeNav();
-
-$(".typed-cursor").hide();
-
-$("#words").typed({
-	strings: [">> sudo npm install <br> >> node server.js"],
-	typeSpeed: 100,
-	loop: true,
-	contentType: 'html'
-});
-
-
-var resizeTimer;
-
-$(window).on('resize', function(e) {
-
-  // $("#words").hide();
-
-
-  // clearTimeout(resizeTimer);
-  // resizeTimer = setTimeout(function() {
-  // var pixAdj = $("wrapper").outerHeight() * .30;
-  //   var rAdj = $("wrapper").outerWidth() * .05;
-
-  //     var l = $("#mac").position.left;
-  //     var t = $("#mac").position.top;
-
-   
-  //  $( "#words" ).position({
-  //       of: $( "#mac" ),
-  //       my: "right"+rAdj+ " center",
-  //       at: "center center" - pixAdj,
-  //       within: "#mac"
-  //     });
-
-  //          $("#words").show();
-  // }, 250);
-
-});
-
-
-//set home to active 
-d3.select("#homeCircle").classed("activeCircle", true)
-d3.select("#homeLbl").classed("scrollTextStyle", true)
-
-
-
-
-                            homeBox()
-	                           makeChart();
-                            buildSeparator();
-
-                 
-
-	});
 
 
 function homeBox(){
 
 
-$(".sld").not(".active").hide();
+// $(".sld").not(".active").hide();
 
 $('.btn').hover(function() {
 var id = $(this).attr("id");
 console.log(id);
 if(id == "linguist"){
 $(".sld").hide();
-$(".slides #" + id).show();
+$(".slides #" + id + "slide").show();
 
     $('.active').removeClass('active');
     $(this).addClass("active");
                 buildTree(treeData, "#syntaxTree");
-
-  } else{
-$(".sld").hide();
-$(".slides #" + id).show();
-
-    $('.active').removeClass('active');
-    $(this).addClass("active");
-
+              $("#syntaxTT").show();
   }
+
+  // $("#homeNavCircles circle").removeClass("activeCirc");
+
+// console.log("#" + id +"Circle");
+
+d3.selectAll("#homeNavCircles Circle").classed("activeCirc", false)
+
+d3.select("#" + id +"Circle").classed("activeCirc", true)
+  // $("#" + id +"Circle").addClass("activeCirc");
+
+                  $("#syntaxTT").hide();
+
+              $(".sld").hide();
+          $(".slides #" + id + "slide").show();
+
+           $('.active').removeClass('active');
+           $(this).addClass("active");
+
+  
 });
+
+
+
+
+
 }
 
 
 
-  function makeNav(){
-
-    var navLine = d3.select("#navigation")
-                          .append("g")
-                          // .attr("viewBox", "0 0 1000 255")
-                          // .attr("preserveAspectRatio", "xMidYMid meet")
-
-
-
-var cx1 = d3.select("#homeCircle").attr("cx"),
-cy1 = d3.select("#homeCircle").attr("cy");
-
-var cx2 = d3.select("#aboutCircle").attr("cx"),
-cy2 = d3.select("#aboutCircle").attr("cy");
-
-var cx3 = d3.select("#projectsCircle").attr("cx"),
-cy3 = d3.select("#projectsCircle").attr("cy");
-
-var cx4 = d3.select("#contactCircle").attr("cx"),
-cy4 = d3.select("#contactCircle").attr("cy");
 
 
 
 
-navLine.append("text")
-        .text("home")
-        .attr("x", cx1 - 15)
-        .attr("y", parseInt(cy1) + 5)
-        .attr("class", "navText")
-        .attr("id", "homeLbl")
 
-
-
-        navLine.append("text")
-        .text("about")
-        .attr("x", cx2 - 15)
-        .attr("y", parseInt(cy2) + 5)
-        .attr("class", "navText")
-        .attr("id", "aboutLbl")
-
-
-   navLine.append("text")
-        .text("projects")
-        .attr("x", cx3 - 20)
-        .attr("y", parseInt(cy3) + 5)
-        .attr("class", "navText")
-         .attr("id", "projectsLbl")
-
-   navLine.append("text")
-        .text("contact")
-        .attr("x", cx4 - 20)
-        .attr("y", parseInt(cy4) + 5)
-        .attr("class", "navText")
-         .attr("id", "textLbl")
-
-
-
-         d3.selectAll("circle")
-            .on("click", function(){
-              var id = d3.select(this).attr("id");
-              var idshort = id.slice(0, -6);
-              $("")
-            })
-
-           d3.selectAll(".navText")
-            .on("click", function(){
-              var id = d3.select(this).attr("id");
-              var idshort = id.slice(0, -3);
-              console.log(idshort);
-            })
-
-
-
-
-  // d3.selectAll("#navigation circle")
-  //   .on("mouseover", function(){
-  //     if(d3.select(this).classed("activeCircle")){
-
-  //     d3.select(this)
-  //       .style("fill", "gainsboro");
-  //     }
-  //   })
-//     .on("mouseout", function(){
-// if(d3.select("#homeCircle").classed("activeCircle", false)){
-//       d3.select(this)
-//         .style("fill", "white");
-//     }
-//   })
-
- // d3.selectAll("#homeLbl")
- //    .on("mouseover", function(){
- //      console.log("here?");
- //      d3.select("#homeCircle")
- //     .style("fill", "gainsboro");
- //    })
- //    .on("mouseout", function(){
- //      if(d3.select("#homeCircle").classed("activeCircle")){
- //      d3.select("#homeCircle")
- //        .style("fill", "white");
- //    }
- //  })
-
-
-
- // d3.selectAll("#aboutLbl")
- //    .on("mouseover", function(){
- //      console.log("here?");
- //      d3.select("#aboutCircle")
- //        .style("fill", "gainsboro");
- //    })
- //    .on("mouseout", function(){
- //      if(d3.select("#aboutCircle").classed("activeCircle")){
- //      d3.select("#aboutCircle")
- //        .style("fill", "white");
- //    }
- //  })
-
-
-//scrollhandling
-var half = window.outerHeight/2;
-var scrollBottom = $(window).scrollTop() + $(window).height();
-
-
-$(document).scroll(function(){
-    if($(this).scrollTop()>=$('#about').position().top - half){
-      console.log("scrolllllll");
-d3.selectAll("circle").classed("activeCircle", false);
-d3.selectAll(".navText").classed("scrollTextStyle", false);
-
-
-d3.selectAll("#aboutCircle").classed("activeCircle", true)
-d3.selectAll("#aboutLbl").classed("scrollTextStyle", true)
-    }
-      if($(this).scrollTop()<=$('#about').position().top - half){
-
-
-d3.selectAll("circle").classed("activeCircle", false);
-d3.selectAll(".navText").classed("scrollTextStyle", false);
-
-
-d3.selectAll("#homeLbl").classed("scrollTextStyle", true)
-
-d3.selectAll("#homeCircle").classed("activeCircle", true)
-
-      }
-
-    if($(this).scrollTop()>=$('#projects').position().top - half){
-
-
-d3.selectAll("circle").classed("activeCircle", false);
-d3.selectAll(".navText").classed("scrollTextStyle", false);
-
-
-d3.selectAll("#projectsLbl").classed("scrollTextStyle", true)
-
-d3.selectAll("#projectsCircle").classed("activeCircle", true)
-
-      }
-
-          if($(this).scrollTop()>=$('#projects').position().top - half/5){
-
-
-d3.selectAll("circle").classed("activeCircle", false);
-d3.selectAll(".navText").classed("scrollTextStyle", false);
-
-
-d3.selectAll("#contactLbl").classed("scrollTextStyle", true)
-
-d3.selectAll("#contactCircle").classed("activeCircle", true)
-
-      }
-
-})
-  }
 
  var treeData = {
     "name": "S",
@@ -378,7 +167,9 @@ d3.selectAll("#contactCircle").classed("activeCircle", true)
 
    function buildTree(treeData, treeContainerDom) {
 
-          var collapsedNode;
+    var currClickCount = 0;
+
+          var collapsedNode = null;
 
               if($("#syntaxTree").has("svg")){
                 $("#syntaxTree svg").remove();
@@ -400,7 +191,7 @@ d3.selectAll("#contactCircle").classed("activeCircle", true)
                     .attr("height", function(){
                         return "100%";
                     })
-                        .attr("viewBox", "0 0 380 255")
+                        .attr("viewBox", "0 0 450 400")
                   .attr("preserveAspectRatio", "xMidYMid meet")
                   .append("g")
                     .attr("transform", "translate(" + 0 + "," + 20 + ")");
@@ -441,7 +232,15 @@ d3.selectAll("#contactCircle").classed("activeCircle", true)
                             return "translate(" + source.x0 + "," + source.y0 + ")";
                         })
                       .on("click", function(d, i){
+
+                        currClickCount++;
+
+                        if(currClickCount % 2 == 1){
                            collapsedNode = d.name;
+                        } else{
+                          collapsedNode = null;
+                        }
+
                           console.log(collapsedNode);
                           nodeclick(d);
 
@@ -480,7 +279,7 @@ d3.selectAll("#contactCircle").classed("activeCircle", true)
                         .style("fill-opacity", 1);
 
                         if(collapsedNode){
-                          d3.select(".circle" + collapsedNode)
+                          d3.select("#circle" + collapsedNode)
                             .transition()
                             .duration(300)
                             .attr("r", 15)
@@ -683,7 +482,7 @@ var vertices = d3.range(5000).map(function(d) {
 
 var delaunay = d3.geom.delaunay(vertices);
 
-var svg = d3.select("#projects")
+var svg = d3.select("#contact")
   .append("svg")
       // .attr("width", "100%")
       // .attr("height", "100%")

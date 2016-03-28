@@ -1,6 +1,3 @@
-#home {
-  height: 100%;
-}
 .navText {
   fill: #b53f2c;
   stroke-width: .2;
@@ -11,7 +8,7 @@
   z-index: 5000;
   position: fixed;
   top: 5vh;
-  left: 80vw;
+  left: 82vw;
   height: 120%;
   stroke: #b53f2c;
 }
@@ -32,8 +29,12 @@
   stroke: #FFF;
 }
 .container-fluid {
+  overflow-x: hidden;
   margin: 0 !important;
   padding: 0 !important;
+}
+.container-fluid #home {
+  height: 100vh !important;
 }
 .container-fluid a:link,
 .container-fluid a:visited,
@@ -44,6 +45,44 @@
 .container-fluid .typed-cursor {
   display: none;
 }
+.container-fluid #homeNavCircles {
+  margin-top: 1vh;
+  margin-left: 46vw;
+  stroke: gainsboro;
+  fill: none;
+  stroke-width: 2;
+}
+.container-fluid .activeCirc {
+  fill: gainsboro;
+}
+.container-fluid #syntaxTT {
+  display: none;
+  position: absolute;
+  width: 28vw;
+  height: 100px;
+  height: auto;
+  background-color: steelblue;
+  opacity: .88;
+  text-align: center;
+  color: #FFF;
+  font-size: .82vw;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 3000;
+  border-radius: 40px;
+}
+.container-fluid #syntaxTT a {
+  text-decoration: none;
+  color: orange;
+}
+.container-fluid #syntaxTT a:hover {
+  color: navy;
+  font-weight: 600;
+}
 .container-fluid .wrapper {
   background-color: #454b59;
   width: 30vw;
@@ -51,9 +90,22 @@
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 0 20px #222;
-  margin-top: 5vh;
+  margin-top: 2vh;
   overflow: hidden;
   margin-bottom: 5%;
+}
+.container-fluid .active {
+  text-transform: uppercase !important;
+  color: gainsboro !important;
+  font-weight: 600 !important;
+  text-shadow: -1px 1px 0px #222, 1px 1px 0px #222, 1px -1px 0px #222, -1px -1px 0px #222 !important;
+  font-size: 1vw;
+  border-radius: 0px;
+}
+.container-fluid #linguist {
+  border-left: .3px solid gray;
+  border-right: .3px solid gray;
+  border-radius: 0;
 }
 .container-fluid .btn {
   z-index: 2000;
@@ -65,11 +117,6 @@
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
   text-align: center;
-}
-.container-fluid .btn .active {
-  font-weight: bold;
-  opacity: .5;
-  color: yellow !important;
 }
 .container-fluid .slides {
   width: auto;
@@ -93,7 +140,6 @@
 .container-fluid #headHolder img {
   opacity: .65;
   position: relative;
-  top: 3vh;
   left: 2vw;
   width: 7vw;
 }
@@ -154,6 +200,7 @@
   z-index: 1000;
   max-width: 100%;
   max-height: 80%;
+  margin-left: 10%;
 }
 .container-fluid #syntaxTree .node circle {
   cursor: pointer;
@@ -203,26 +250,165 @@
   fill: #DC4225;
 }
 .container-fluid #projects {
-  height: 100%;
+  height: 100vh;
   width: 100%;
+  background-color: gray;
+  display: flex;
 }
-.container-fluid #projects svg {
-  height: 100%;
-  width: 100%;
-}
-.container-fluid #projects path {
-  fill: rgba(0, 0, 0, 0.75);
-  stroke: gainsboro;
-  stroke-width: .3px;
+.container-fluid #projects #projectT {
+  font-family: 'Lobster', cursive;
+  font-size: 5vw;
+  color: purple;
+  z-index: 100;
+  position: absolute;
+  top: 220%;
+  left: 10;
 }
 .container-fluid #about {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
   background: #454b59;
   background: linear-gradient(to right bottom, gainsboro 50%, #454b59 50%);
+}
+.container-fluid #about div {
+  display: inline-block;
+}
+.container-fluid #about #skillChart {
+  display: inline-block;
+}
+.container-fluid #about #skillChart #lineChart {
+  margin-left: 10%;
+}
+.container-fluid #about #skillChart #lineChart path {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1px;
+}
+.container-fluid #about #skillChart #lineChart .axisText {
+  fill: black;
+  font-size: .8vw;
+}
+.container-fluid #about #skillChart #lineChart .yaxis text {
+  display: none;
+}
+.container-fluid #about #skillChart #lineChart .yaxis line {
+  stroke: gray;
+}
+.container-fluid #about #skillChart #lineChart .yaxis path {
+  stroke: gray;
+}
+.container-fluid #about #skillChart #lineChart .xaxis path {
+  stroke: gray;
+}
+.container-fluid #about #skillChart #lineChart .xaxis line {
+  stroke: gray;
+}
+.container-fluid #about #skillChart #sequence {
+  margin-left: 5vw;
+  margin-top: 3vh;
+  display: block;
+}
+.container-fluid #about #skillChart #sequence text,
+.container-fluid #about #skillChart #legend text {
+  font-weight: 500;
+  fill: #fff;
+}
+.container-fluid #about #sbtt {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  background-color: steelblue;
+  opacity: .88;
+  color: #FFF;
+  font-size: .9vw;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  z-index: 3000;
+  border-radius: 15px;
+}
+.container-fluid #about #sbtt:after {
+  content: '';
+  position: relative;
+  top: 41px;
+  left: 47px;
+  /*position: absolute;
+            top: 30px;
+            left: 380px;*/
+  margin-top: 200px;
+  width: 0;
+  height: 0;
+  border-color: steelblue transparent transparent transparent;
+  border-style: solid;
+  border-width: 26.0px 15px 0 15px;
+}
+.container-fluid #about #sbtt #ttClose {
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  padding-left: 10%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-top: 5%;
+  width: 60%;
+  border: 1px solid #FFF;
+  border-radius: 20px;
+  color: #FFF;
+  height: auto;
+  display: block;
+  margin-bottom: -4px;
+}
+.container-fluid #about #sbtt #ttClose .fa {
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  padding-left: 5px;
+  vertical-align: middle;
+}
+.container-fluid #about #sbtt #ttClose:hover {
+  background-color: gray;
+}
+.container-fluid #about #sunburst {
+  display: inline-block;
+  z-index: 100;
+  stroke: #FFF;
+  stroke-width: 1px;
+  position: relative;
+  left: 12%;
+  top: 7%;
+}
+.container-fluid #about #sunburst text {
+  fill: steelblue;
+  font-size: 12px;
+}
+.container-fluid #about #sunburst path {
+  cursor: pointer;
+}
+.container-fluid #about .ttl {
+  font-size: 4vw;
+  font-weight: 500;
+}
+.container-fluid #about #aboutMe {
+  font-size: 4vw;
+  position: relative;
+  top: 2%;
+  left: 2%;
+  line-height: 12vh;
+  color: #a9a9a9;
 }
 .container-fluid #contact {
   height: 20%;
   width: 100%;
-  background-color: white;
+}
+.container-fluid #contact svg {
+  height: 100%;
+  width: 100%;
+  z-index: -100;
+}
+.container-fluid #contact path {
+  fill: rgba(0, 0, 0, 0.75);
+  stroke: gainsboro;
+  stroke-width: .3px;
 }

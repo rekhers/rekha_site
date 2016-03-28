@@ -1,6 +1,19 @@
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
+// var colorable = require("colorable");
+
+
+// var colors = {
+//   red: 'red',
+//   green: 'green',
+//   blue: 'blue'
+// };
+// var options = {
+//   compact: true,
+//   threshold: 0 
+// };
+// var result = colorable(colors, options);
 
 app.set('view engine', 'ejs');
 

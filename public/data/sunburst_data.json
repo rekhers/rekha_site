@@ -1,0 +1,17 @@
+
+
+ {
+ "name": "skills",
+ "children": [
+
+      {"name": "web development", 
+      "children": [
+        {"name": "front end", "size": 500},
+       {"name": "back end", "size": 300}
+      ]},
+      {"name": "concepts & practices", "size": 1000}
+ 
+    
+  
+  ]}
+

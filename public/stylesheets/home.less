@@ -1,12 +1,8 @@
 // /* CSS declarations go here */
 
-
 @sublime-pink: #F92672;
 @sublime-blue:#66D9EF;
 
-#home{
-  height: 100%;
-}
 
 .navText{
   // stroke-width: .5;
@@ -17,11 +13,13 @@
 }
 
 
+
+
 #navigation{
   z-index: 5000;
   position: fixed;
   top: 5vh;
-  left: 80vw;
+  left: 82vw;
   height: 120%;
   stroke: #b53f2c;
 
@@ -55,10 +53,12 @@
 }
 
 .container-fluid{
-
+overflow-x: hidden;
 margin: 0 !important;
 padding: 0 !important;
-
+#home{
+  height: 100vh !important;
+}
 a:link, a:visited, a:hover, a:active {
   text-decoration: none; 
 }
@@ -67,6 +67,55 @@ a:link, a:visited, a:hover, a:active {
   display: none;
 }
 
+#homeNavCircles{
+  margin-top: 1vh;
+  margin-left: 46vw;
+  stroke: gainsboro;
+  fill: none;
+  stroke-width: 2;
+}
+
+.activeCirc{
+  fill: gainsboro;
+}
+
+#syntaxTT{
+
+  a{
+    text-decoration: none;
+    color: orange;
+  }
+
+  a:hover{
+      color: navy;
+      font-weight: 600;
+  }
+          display: none;
+          position: absolute;
+          // left: 70%;
+          // top: 10%;
+            width: 28vw;
+            height: 100px;
+            height: auto;
+            background-color: steelblue;
+            opacity: .88;
+            text-align: center;
+            color: #FFF;
+            font-size: .82vw;
+            font-weight: 400;
+            padding-left: 10px;
+                padding-right: 10px;
+
+font-family: 'Open Sans', sans-serif;
+
+            padding-top: 10px;
+           padding-bottom: 10px;
+            z-index: 3000;
+            border-radius: 40px;
+
+
+
+    }
 
 .wrapper {
   background-color: #454b59;
@@ -75,13 +124,33 @@ a:link, a:visited, a:hover, a:active {
   margin-left:auto;
   margin-right: auto;
   box-shadow: 0 0 20px #222;
-  margin-top: 5vh;
+  margin-top: 2vh;
   overflow: hidden;
   margin-bottom: 5%;
     }
 
+.active{
+  text-transform: uppercase !important;
+  color: gainsboro !important;
+  font-weight: 600 !important;
+  // box-shadow:inset 10px 10px 35px rgba(0,0,0,.125) !important;
+  text-shadow: -1px 1px 0px #222, 1px 1px 0px #222, 1px -1px 0px #222, -1px -1px 0px #222 !important;
+
+  // box-shadow: none !important;
+    // border-top: 1px solid gainsboro;
+      font-size: 1vw;
+
+  border-radius: 0px;
+}
+
+#linguist{
+  border-left: .3px solid gray;
+    border-right: .3px solid gray;
+    border-radius: 0;
+}
 
     .btn {
+    
       z-index: 2000;
       text-decoration:none;
       color:#FFF;
@@ -90,17 +159,12 @@ a:link, a:visited, a:hover, a:active {
         width: 33.3333%;
       float: left;
         font-family: 'Roboto', sans-serif;
-
       text-decoration: none;
       text-align: center;
-       .active {
-            font-weight: bold;
-             // background: #ccc;
-             opacity: .5;
-             color: yellow !important;
-            }
+   
 
         }
+
 
 .slides {
     width: auto;
@@ -132,7 +196,7 @@ a:link, a:visited, a:hover, a:active {
 img{
   opacity: .65;
   position: relative;
-  top: 3vh;
+  // top: 3vh;
   left: 2vw;
   width: 7vw;
 }
@@ -230,6 +294,7 @@ text-align:center;
     z-index: 1000;
     max-width: 100%;
     max-height: 80%;
+    margin-left:  10%;
   svg{
 
 
@@ -303,13 +368,266 @@ rect:hover{
 
 #projects{
     // background: gba(0, 0, 0, 0.25);
-  height: 100%;
+  height: 100vh;
   width: 100%;
-      svg {
+  background-color: gray;
+display: flex;
+
+      #projectT{
+        font-family: 'Lobster', cursive;
+        font-size: 5vw;
+        color: purple;
+                z-index: 100;
+                position: absolute;
+                top: 220%;
+                left: 10;
+
+      }
+
+}
+
+#about {
+
+  height: 100vh;
+ background:#454b59;
+  background: linear-gradient(to right bottom, gainsboro 50%, #454b59 50%);
+div{
+  display: inline-block;
+}
+
+#skillChart{
+
+  display: inline-block;
+
+#lineChart{
+
+  margin-left: 10%;  
+// background-color: #FFF;
+
+  path {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1px;
+  // display: block;
+
+}
+
+// line {
+//   fill: black;
+// }
+
+.axisText{
+  fill: black;
+  font-size: .8vw;
+}
+
+.yaxis{
+  text{
+    display: none;
+  }
+
+  line{
+    stroke: gray;
+  }
+
+  path{
+    stroke: gray;
+  }
+}
+
+.xaxis{
+  path{
+stroke: gray;
+}
+
+  line{
+    stroke: gray;
+  }
+}
+
+}
+
+#sequence{
+  margin-left: 5vw;
+  margin-top: 3vh;
+  display: block;
+}
+
+#sequence text, #legend text {
+  font-weight: 500;
+  fill: #fff;
+}
+}
+
+// #sbtt{
+//   width: 125px;
+//   height: auto;
+//   background-color: #FFF;
+//   border: 2px solid steelblue;
+//   position: absolute;
+//   z-index: 400;
+
+// button{
+//   width: auto;
+//   border: 2px solid steelblue;
+// }
+
+// }
+
+  #sbtt{
+
+          position: absolute;
+            width: 150px;
+            height: auto;
+            background-color: steelblue;
+            opacity: .88;
+            color: #FFF;
+            font-size: .9vw;
+            font-weight: 400;
+            padding-left: 10px;
+                padding-right: 10px;
+
+font-family: 'Open Sans', sans-serif;
+
+            padding-top: 10px;
+           padding-bottom: 0px;
+
+            z-index: 3000;
+            border-radius: 15px;
+         &:after {
+            content: '';
+            position:relative;
+            top: 41px;
+            left: 47px;
+            /*position: absolute;
+            top: 30px;
+            left: 380px;*/
+            margin-top: 200px;
+
+            width: 0;
+            height: 0;
+            border-color: steelblue transparent transparent transparent;
+            border-style: solid;
+border-width: 26.0px 15px 0 15px;
+
+        }
+
+        #ttClose{
+          margin-left: auto;
+          margin-right: auto;
+          cursor:pointer;
+          padding-left: 10%;
+           padding-top: 3%;
+          padding-bottom: 3%;
+           margin-top: 5%;
+          width: 60%;
+          border: 1px solid #FFF;
+          border-radius: 20px;
+          color: #FFF;
+          height: auto;
+          display: block;
+          margin-bottom: -4px;
+          .fa{
+            font-size: 20px;
+            display: inline-block;
+            margin-right: 5px;
+            padding-left: 5px;
+            vertical-align: middle;
+          }
+
+          &:hover{
+            background-color: gray;
+
+          }
+        }
+    }
+
+
+
+
+// #explanation{
+//   position: relative;
+//   font-size: 1.3vw;
+//   top: 3%;
+//   left: 25%;
+// }
+
+#sunburst{
+    display: inline-block;
+
+  z-index: 100;
+  stroke: #FFF;
+  stroke-width: 1px;
+  position: relative;
+  left: 12%;
+  top: 7%;
+  
+
+text{
+  fill: steelblue;
+  font-size: 12px;
+}
+path{
+  cursor: pointer;
+}
+
+// #explanation {
+//   position: absolute;
+//   top: 260px;
+//   left: 305px;
+//   width: 140px;
+//   text-align: center;
+//   color: #666;
+//   z-index: -1;
+// }
+
+// #percentage {
+//   font-size: 2.5em;
+// }
+
+}
+
+  .ttl{
+    font-size: 4vw;
+    font-weight: 500;
+  }
+
+  // #abtTtl{
+  //   position: relative;
+  //   color: #454b59;
+  //   left: 2%;
+  //   top: 2%;
+  // }
+
+  #aboutMe{
+    font-size: 4vw;
+    position: relative;
+    top: 2%;
+    left: 2%;
+    line-height: 12vh;
+    color: #a9a9a9;
+
+  }
+
+
+
+  // #skTtl{
+  //       position: relative;
+  //       color: gainsboro;
+  //       left: 65%;
+  //       top: 73%;
+  // }
+
+}
+
+#contact{
+  height: 20%;
+width: 100%;
+ svg {
         height: 100%;
     
         width: 100%;
-        // z-index: -100;
+        z-index: -100;
       }
 
       path {
@@ -319,25 +637,6 @@ rect:hover{
         stroke-width: .3px;
       }
 
-      // .selectedTriangle{
-      //     fill:steelblue;
-      // }
-
-}
-
-#about {
-
-  height: 100%;
-  width: 100%;
- background:#454b59;
-  background: linear-gradient(to right bottom, gainsboro 50%, #454b59 50%);
-
-}
-
-#contact{
-  height: 20%;
-width: 100%;
-background-color: white;
 }
 
 }
