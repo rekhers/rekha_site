@@ -10,7 +10,7 @@ var json = {"name": "skills",
       "children": [
           {"name": "html & templates", 
           "children": [
-            {"name": "ejs", "size":50},
+            {"name": "ejs", "size":50, "chY":[1, 1, 3, ]},
             {"name": "erb", "size":50},
             {"name": "Jade", "size":20},
             {"name": "Razor", "size":50}
@@ -22,12 +22,20 @@ var json = {"name": "skills",
             {"name": "scss", "size": 55}
           ]
         }, 
-        {"name": "data visualization/animations", 
+        {"name": "visualization", 
           "children": [
             {"name": "d3", "size": 150},
-            {"name": "SMIL", "size": 30}
+            {"name": "raphael", "size": 50},
+            {"name": "bokeh", "size": 50}
+
           ]
         },
+            {"name": "animation",
+            "children":[
+              {"name": "css", "size": 60},
+              {"name": "SMIL", "size": 50}
+            ]
+          },
            {"name": "js frameworks",
            "children": [
             {"name": "Angular", "size": 50},
@@ -52,9 +60,9 @@ var json = {"name": "skills",
           {"name": "node.js", "size": 100},
           {"name": "db", 
             "children": [
-              {"name": "mongoDB"},
-              {"name": "postgreSQL"},
-              {"name": "mySQL"}
+              {"name": "mongoDB", "chY": [1, 1, 3, 4, 5], "size": 50},
+              {"name": "postgreSQL", "chY": [1, 1, 2, 4, 2], "size": 50},
+              {"name": "mySQL", "chY": [1, 1, 2, 4, 3], "size": 30}
             ]
         },
            {"name": "web sockets", "size": 100, "chY": [1, 1, 4, 5, 4]}
@@ -64,10 +72,11 @@ var json = {"name": "skills",
           //800
       {"name": "concepts & practices",
       "children": [
-        {"name": "OOP", "size": 100, "chY": [2, 2, 4, 3, 4]},
-        {"name": "Agile", "size": 100, "chY": [2, 2, 4, 3, 4]},
+        {"name": "OOP", "size": 100, "chY": [2, , 4, 3, 4]},
+        {"name": "Agile", "size": 100, "chY": [2, 2, 4, 5, 5]},
         {"name": "TDD", "size": 100, "chY": [2, 2, 4, 3, 4]},
-        {"name": "functional programming & formal logic", "size": 100, "chY": [2, 2, 4, 3, 4]},
+        {"name": "functional programming", "size": 100, "chY": [2, 2, 4, 3, 4]},
+        {"name": "formal logic", "size": 100, "chY": [4, 5, 4, 3, 4]},
         {"name": "algorithm complexity", "size": 100, "chY": [2, 2, 4, 3, 4]},
        {"name": "AMD", "size": 100, "chY": [2, 2, 4, 3, 4]},
        {"name": "Version Control", 
@@ -100,8 +109,8 @@ var b = {
 };
 
 
-var width = 350,
-    height = 350,
+var width = 330,
+    height = 330,
     radius = (Math.min(width, height) / 2);
 
 var formatNumber = d3.format(",d");
@@ -330,12 +339,86 @@ console.log(nodeArray);
       .attr("points", breadcrumbPoints)
       .style("fill", function(d) { return color(d.name); });
 
+    
+
   entering.append("svg:text")
       .attr("x", (b.w + b.t) / 2)
-      .attr("y", b.h / 2)
+      .attr("y", function(d){
+        var name = d.name;
+        var nameArr= name.split(" ");
+        if(name != "responsive frameworks" && name != "concepts & practices" && name != "algorithm complexity" && name != "functional programming"){
+          return b.h/2
+            } 
+            else{
+              return b.h/3
+            }
+      })
       .attr("dy", "0.35em")
       .attr("text-anchor", "middle")
-      .text(function(d) { return d.name; });
+      .text(function(d) { 
+        var name = d.name;
+        console.log(name);
+        var nameArr= name.split(" ");
+        console.log(nameArr);
+        if(name != "responsive frameworks" && name != "concepts & practices" && name != "algorithm complexity" && name != "functional programming"){
+        return d.name;
+      } 
+       else if(name == "algorithm complexity"){
+        return "algorithm";
+        }
+       else if(name == "functional programming"){
+        return "functional";
+        }
+      else if(name == "concepts & practices"){
+        return "concepts &";
+      }
+      else{
+        return nameArr[0];
+      }
+         }) 
+      .attr("class", "bcText");
+
+
+
+
+
+       entering.append("svg:text")
+      .attr("x", (b.w + b.t) / 2)
+      .attr("y", function(d){
+        var name = d.name;
+        var nameArr= name.split(" ");
+        if(name != "responsive frameworks" && name != "concepts & practices" && name != "algorithm complexity" && name != "functional programming"){
+          return;
+            } 
+    
+            else{
+              return b.h/1.5;
+            }
+      })
+      .attr("dy", "0.35em")
+      .attr("text-anchor", "middle")
+      .text(function(d) { 
+        var name = d.name;
+        console.log(name);
+        var nameArr= name.split(" ");
+        console.log(nameArr);
+        if(name != "responsive frameworks" && name != "concepts & practices" && name != "algorithm complexity" && name != "functional programming"){
+        return;
+      } 
+      else if(name == "algorithm complexity"){
+        return "complexity";
+        }
+       else if(name == "functional programming"){
+        return "programming";
+        }
+          else if(name == "concepts & practices"){
+        return "practices";
+        }
+      else{
+        return nameArr[1];
+      }
+         }) 
+      .attr("class", "bcText");
 
   // Set position for entering and updating nodes.
   g.attr("transform", function(d, i) {

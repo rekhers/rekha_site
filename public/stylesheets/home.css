@@ -4,6 +4,10 @@
   font-size: 12px;
   cursor: pointer;
 }
+.bcText {
+  font-size: .85vw;
+  word-wrap: normal;
+}
 #navigation {
   z-index: 5000;
   position: fixed;
@@ -95,17 +99,11 @@
   margin-bottom: 5%;
 }
 .container-fluid .active {
-  text-transform: uppercase !important;
   color: gainsboro !important;
   font-weight: 600 !important;
   text-shadow: -1px 1px 0px #222, 1px 1px 0px #222, 1px -1px 0px #222, -1px -1px 0px #222 !important;
-  font-size: 1vw;
+  font-size: 1vw !important;
   border-radius: 0px;
-}
-.container-fluid #linguist {
-  border-left: .3px solid gray;
-  border-right: .3px solid gray;
-  border-radius: 0;
 }
 .container-fluid .btn {
   z-index: 2000;
@@ -169,7 +167,7 @@
   color: #7CFC00;
   width: 8.5vw;
   height: 5vh;
-  left: 10vw;
+  left: -0.8vw;
   top: 10vh;
   position: relative;
   z-index: 6000;
@@ -269,52 +267,51 @@
   background: #454b59;
   background: linear-gradient(to right bottom, gainsboro 50%, #454b59 50%);
 }
-.container-fluid #about div {
-  display: inline-block;
+.container-fluid #about #ilParent {
+  display: flex;
+  flex-direction: row;
 }
-.container-fluid #about #skillChart {
-  display: inline-block;
+.container-fluid #about #ilParent #skillChart #lineChart {
+  margin-top: -18%;
+  margin-left: 4%;
 }
-.container-fluid #about #skillChart #lineChart {
-  margin-left: 10%;
-}
-.container-fluid #about #skillChart #lineChart path {
+.container-fluid #about #ilParent #skillChart #lineChart path {
   fill: none;
   stroke: steelblue;
   stroke-width: 1px;
 }
-.container-fluid #about #skillChart #lineChart .axisText {
+.container-fluid #about #ilParent #skillChart #lineChart .axisText {
   fill: black;
   font-size: .8vw;
 }
-.container-fluid #about #skillChart #lineChart .yaxis text {
+.container-fluid #about #ilParent #skillChart #lineChart .yaxis text {
   display: none;
 }
-.container-fluid #about #skillChart #lineChart .yaxis line {
+.container-fluid #about #ilParent #skillChart #lineChart .yaxis line {
   stroke: gray;
 }
-.container-fluid #about #skillChart #lineChart .yaxis path {
+.container-fluid #about #ilParent #skillChart #lineChart .yaxis path {
   stroke: gray;
 }
-.container-fluid #about #skillChart #lineChart .xaxis path {
+.container-fluid #about #ilParent #skillChart #lineChart .xaxis path {
   stroke: gray;
 }
-.container-fluid #about #skillChart #lineChart .xaxis line {
+.container-fluid #about #ilParent #skillChart #lineChart .xaxis line {
   stroke: gray;
 }
-.container-fluid #about #skillChart #sequence {
-  margin-left: 5vw;
-  margin-top: 3vh;
+.container-fluid #about #ilParent #skillChart #sequence {
+  margin-left: 2vw;
+  margin-top: 7vh;
   display: block;
 }
-.container-fluid #about #skillChart #sequence text,
-.container-fluid #about #skillChart #legend text {
+.container-fluid #about #ilParent #skillChart #sequence text,
+.container-fluid #about #ilParent #skillChart #legend text {
   font-weight: 500;
   fill: #fff;
 }
-.container-fluid #about #sbtt {
+.container-fluid #about #ilParent #sbtt {
   position: absolute;
-  width: 150px;
+  width: 170px;
   height: auto;
   background-color: steelblue;
   opacity: .88;
@@ -329,7 +326,7 @@
   z-index: 3000;
   border-radius: 15px;
 }
-.container-fluid #about #sbtt:after {
+.container-fluid #about #ilParent #sbtt:after {
   content: '';
   position: relative;
   top: 41px;
@@ -344,7 +341,7 @@
   border-style: solid;
   border-width: 26.0px 15px 0 15px;
 }
-.container-fluid #about #sbtt #ttClose {
+.container-fluid #about #ilParent #sbtt #ttClose {
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
@@ -360,30 +357,28 @@
   display: block;
   margin-bottom: -4px;
 }
-.container-fluid #about #sbtt #ttClose .fa {
+.container-fluid #about #ilParent #sbtt #ttClose .fa {
   font-size: 20px;
   display: inline-block;
   margin-right: 5px;
   padding-left: 5px;
   vertical-align: middle;
 }
-.container-fluid #about #sbtt #ttClose:hover {
+.container-fluid #about #ilParent #sbtt #ttClose:hover {
   background-color: gray;
 }
-.container-fluid #about #sunburst {
-  display: inline-block;
+.container-fluid #about #ilParent #sunburst {
   z-index: 100;
   stroke: #FFF;
   stroke-width: 1px;
-  position: relative;
-  left: 12%;
-  top: 7%;
+  margin-top: 5%;
+  margin-left: 7%;
 }
-.container-fluid #about #sunburst text {
+.container-fluid #about #ilParent #sunburst text {
   fill: steelblue;
   font-size: 12px;
 }
-.container-fluid #about #sunburst path {
+.container-fluid #about #ilParent #sunburst path {
   cursor: pointer;
 }
 .container-fluid #about .ttl {

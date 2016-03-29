@@ -43,6 +43,19 @@ $("#headHolder img").css("top", pos.top + five)
 
 }
 
+ $("#sbtt").position({
+        of: $("#sunburst"),
+        my: "left bottom",
+        at: "left center",
+        collision: "none"
+      });
+
+$("#syntaxTT").position({
+  of: $(".wrapper"),
+  my: "center top+15", 
+  at: "center bottom",
+  collision: "none"
+})
 
   // $("#words").hide();
 
@@ -109,7 +122,7 @@ $("#ttClose").click(function(){
 
 $("#syntaxTT").position({
   of: $(".wrapper"),
-  my: "center top+20", 
+  my: "center top+15", 
   at: "center bottom",
   collision: "none"
 })

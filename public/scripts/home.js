@@ -27,7 +27,7 @@ d3.selectAll("#homeNavCircles Circle").classed("activeCirc", false)
 d3.select("#" + id +"Circle").classed("activeCirc", true)
   // $("#" + id +"Circle").addClass("activeCirc");
 
-                  $("#syntaxTT").hide();
+                  // $("#syntaxTT").hide();
 
               $(".sld").hide();
           $(".slides #" + id + "slide").show();
