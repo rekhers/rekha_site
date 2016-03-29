@@ -20,13 +20,16 @@
   stroke: #b53f2c;
   fill: white;
   cursor: pointer;
-  stroke-width: 4px;
+  stroke-width: 2.5px;
+}
+#navigation line {
+  stroke-width: 2.5px;
 }
 #navigation .activeCircle {
   stroke: #b53f2c;
   fill: gainsboro;
   cursor: pointer;
-  stroke-width: 4px;
+  stroke-width: 2.5px;
 }
 #navigation .scrollTextStyle {
   fill: #FFF;
@@ -248,10 +251,61 @@
   fill: #DC4225;
 }
 .container-fluid #projects {
+  flex-direction: column;
   height: 100vh;
   width: 100%;
-  background-color: gray;
+  background-color: #4A4A4A;
   display: flex;
+}
+.container-fluid #projects #boxRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+}
+.container-fluid #projects #boxRow .projBox {
+  margin-left: -10%;
+  margin-top: 5vh;
+  border: 1px solid black;
+  width: 30vw;
+  height: 60vh;
+  background-color: gainsboro;
+  box-shadow: 0 10px 6px -6px black;
+}
+.container-fluid #projects #boxRow .projBox .projTitle {
+  font-family: 'Muli', sans-serif;
+  font-size: 1.5vw;
+  text-align: center;
+  margin-top: 3%;
+  font-weight: 600;
+}
+.container-fluid #projects #boxRow .projBox:hover {
+  box-shadow: 10 10px 6px -20px black;
+}
+.container-fluid #projects #boxRow .projBox .thumbnail {
+  background-color: gainsboro;
+}
+.container-fluid #projects #boxRow .projBox .thumbnail img {
+  padding: 0;
+  height: auto;
+  width: 50%;
+}
+.container-fluid #projects #trapezoid {
+  display: block;
+  border-bottom: 150px solid #B58921;
+  border-right: 130px solid transparent;
+  height: 0;
+  margin-top: 5vh;
+  width: 70vw;
+}
+.container-fluid #projects #trapezoid #projDesc {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 4%;
+  color: gainsboro;
+  font-size: 1.2vw;
+  font-family: 'Muli', sans-serif;
 }
 .container-fluid #projects #projectT {
   font-family: 'Lobster', cursive;
@@ -393,17 +447,36 @@
   line-height: 12vh;
   color: #a9a9a9;
 }
+.container-fluid .iconRow {
+  position: relative;
+  top: 6vh;
+  left: 15vw;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+}
+.container-fluid .iconRow a {
+  text-decoration: none;
+  color: gainsboro;
+}
+.container-fluid .iconRow a:hover {
+  color: #002f4b;
+}
 .container-fluid #contact {
-  height: 20%;
+  background-color: #692413;
+  height: 25vh;
   width: 100%;
 }
 .container-fluid #contact svg {
+  background-color: gainsboro;
   height: 100%;
   width: 100%;
   z-index: -100;
 }
 .container-fluid #contact path {
-  fill: rgba(0, 0, 0, 0.75);
-  stroke: gainsboro;
-  stroke-width: .3px;
+  fill: gainsboro;
+  stroke: #454b59;
+  stroke-width: .7px;
 }

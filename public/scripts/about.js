@@ -10,47 +10,47 @@ var json = {"name": "skills",
       "children": [
           {"name": "html & templates", 
           "children": [
-            {"name": "ejs", "size":50, "chY":[1, 1, 3, ]},
-            {"name": "erb", "size":50},
-            {"name": "Jade", "size":20},
-            {"name": "Razor", "size":50}
+            {"name": "ejs", "size":50, "chY":[1, 1, 3, 4, 5]},
+            {"name": "erb", "size":50, "chY": [1, 1, 4, 3, 3]},
+            {"name": "Jade", "size":20, "chY": [1, 1, 2, 2, 3]},
+            {"name": "Razor", "size":50, "chY": [1, 1, 1, 5, 4]}
           ]
         },
           {"name": "css", 
           "children": [
-            {"name": "less", "size": 125},
-            {"name": "scss", "size": 55}
+            {"name": "less", "size": 125, "chY": [1, 1, 3, 5, 5]},
+            {"name": "scss", "size": 55, "chY": [1, 2, 5, 4, 4]}
           ]
         }, 
         {"name": "visualization", 
           "children": [
-            {"name": "d3", "size": 150},
-            {"name": "raphael", "size": 50},
-            {"name": "bokeh", "size": 50}
+            {"name": "d3", "size": 150, "chY": [1, 1, 3, 4, 5]},
+            {"name": "raphael", "size": 50, "chY": [1, 1, 2, 3, 3]},
+            {"name": "bokeh", "size": 50, "chY": [1, 1, 2, 4, 3]}
 
           ]
         },
             {"name": "animation",
             "children":[
-              {"name": "css", "size": 60},
-              {"name": "SMIL", "size": 50}
+              {"name": "css", "size": 60, "chY": [1, 1, 2, 4, 5]},
+              {"name": "SMIL", "size": 50, "chY": [1, 1, 2, 4, 4]}
             ]
           },
            {"name": "js frameworks",
            "children": [
-            {"name": "Angular", "size": 50},
-            {"name": "Backbone", "size": 70}
+            {"name": "Angular", "size": 50, "chY": [1, 1, 2, 3, 5]},
+            {"name": "Backbone", "size": 70, "chY": [1, 1, 3, 5, 4]}
            ]
          },
            {"name": "responsive frameworks", 
             "children":[
-              {"name": "bootstrap", "size": 100}
+              {"name": "bootstrap", "size": 100, "chY": [1, 1, 3, 5, 5]}
             ]
          },
 
              {"name": "task runners",
             "children":[
-              {"name": "grunt", "size": 100}
+              {"name": "grunt", "size": 100, "chY": [1, 1, 1, 3, 4]}
             ]
          }
       ]
@@ -437,7 +437,7 @@ console.log(nodeArray);
 var svg_width = 200,
     svg_height = 180,
     data = yValues,
-    years = [2012, 2013, 2014, 2015, 2016]
+    years = [2013, 2014, 2015, 2016]
     margin = {top:10, right: 15, bottom:30, left: 30},
     chart_width = svg_width - margin.left - margin.right,
     chart_height = svg_height - margin.top - margin.bottom
@@ -451,7 +451,7 @@ var svg_width = 200,
 //                       .range([0, chart_width]);
 
 var x = d3.scale.ordinal()
-    .domain(["2012", "2013", "2014", "2015", "2016"])
+    .domain(["2013", "2014", "2015", "2016"])
     .rangePoints([0, chart_width]);
 
 var xAxis = d3.svg.axis()

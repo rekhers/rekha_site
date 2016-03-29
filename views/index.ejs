@@ -18,7 +18,7 @@
   <script src="../public/scripts/projects.js"></script>
 
 	<script src="../public/scripts/main.js"></script>
-
+<link href='https://fonts.googleapis.com/css?family=Cabin|Hind:500|Inconsolata|Muli' rel='stylesheet' type='text/css'>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -38,13 +38,13 @@
 
 
 <svg id="navigation" viewbox="0 0 250 700">
-  <circle id="homeCircle" cx="100" cy="80" r="30" stroke-width="4"  class="selected" />
-    <line x1="100" y1="110" x2="100" y2="210" style=";stroke-width:4" />
-  <circle id="aboutCircle" cx="100" cy="215" r="30"  stroke-width="4" />
-     <line x1="100" y1="245" x2="100" y2="345" style="stroke-width:4" />
-  <circle id="projectsCircle" cx="100" cy="345" r="30" stroke-width="4"  />
-    <line x1="100" y1="375" x2="100" y2="475" style="stroke-width:4" />
-  <circle id="contactCircle" cx="100" cy="475" r="30" stroke-width="4"  />
+  <circle id="homeCircle" cx="100" cy="80" r="30" class="selected" />
+    <line x1="100" y1="110" x2="100" y2="210"/>
+  <circle id="aboutCircle" cx="100" cy="215" r="30" />
+     <line x1="100" y1="245" x2="100" y2="345" />
+  <circle id="projectsCircle" cx="100" cy="345" r="30"  />
+    <line x1="100" y1="375" x2="100" y2="475"  />
+  <circle id="contactCircle" cx="100" cy="475" r="30"  />
 </svg>
 
 <!-- <div id="home" class="section active">
@@ -127,36 +127,35 @@
 Got it <i class="fa fa-thumbs-o-up"></i></div></div>
 </div>
 </div>
-<!-- <div class="skillBtns">
-	languages (and how I've used them)
-</div>
 
-<div class="skillBtns">
-	web dev tools
-</div>
-
-<div class="skillBtns">
-	concepts
-</div>
-
-<div class="skillBtns">
-	what I'm excited about right now
-</div>
- -->
-<!-- 		<div id="skTtl" class="ttl">skills</div>
- -->
 </div>
 
 <div class="row-fluid" id="projects">
-<!-- 	<div id="projectT"> projects </div>
--->
-<div id="projDesc"> While my main focus is currently 
-
-	Most of my projects have revolved around mapping and the Twitter API, as I'm generally interested in addressing sociopolitical questions with real-time, geographical, demographic, and/or linguistic data. The two listed below are the ones I'm most actively working on now, but you can find a full list of apps I've worked on over the last year and a half at my <a href="https://www.github.com/rekhers"> github </a> page.</div>
+  <div id="trapezoid">
+<div id="projDesc"> Most of my projects have revolved around mapping and the Twitter API, as I'm  interested in addressing sociopolitical questions with geographic, demographic, and linguistic data. The two described below are the ones I'm most actively working on now, but you can find a full list of apps I've worked on over the last year and a half at my <a href="https://www.github.com/rekhers"> github </a> page.</div>
 
 </div>
 
+<div id="boxRow">
+  <div id="twitter" class="projBox"> <div class="projTitle"> Real Time US Tweet Heatmap </div>
+    <div class="thumbnail img-responsive"><img src="../public/images/tweetScreenshot.png"/></div>
+  </div>
+    <div id="politics" class="projBox">  <div class="projTitle"> 2016 Election Electoral Projection Tool </div>
+          <div class="thumbnail img-responsive"><img src="../public/images/electoral_map_screenshot.png"/></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
 <div class="row-fluid" id="contact">
+  <div class="iconRow">
+  <a href="https://github.com/rekhers"><i class="fa fa-github fa-5x"></i></a>
+<a href="https://www.linkedin.com/in/rekha-tenjarla-588a19112"><i class="fa fa-linkedin-square fa-5x"></i></a>
+<a href="mailto:rekha.tenjarla@gmail.com"><i class="fa fa-envelope fa-5x"></i></a>
+</div>
 </div>
 </div>
 </html>

@@ -3,9 +3,9 @@ zoomBurst();
 
 
 startPositioning();
-
-
 makeNav();
+  homeBox()
+  makeChart();
 
 $(".typed-cursor").hide();
 
@@ -43,6 +43,10 @@ $("#headHolder img").css("top", pos.top + five)
 
 }
 
+
+
+
+
  $("#sbtt").position({
         of: $("#sunburst"),
         my: "left bottom",
@@ -57,27 +61,7 @@ $("#syntaxTT").position({
   collision: "none"
 })
 
-  // $("#words").hide();
 
-
-  // clearTimeout(resizeTimer);
-  // resizeTimer = setTimeout(function() {
-  // var pixAdj = $("wrapper").outerHeight() * .30;
-  //   var rAdj = $("wrapper").outerWidth() * .05;
-
-  //     var l = $("#mac").position.left;
-  //     var t = $("#mac").position.top;
-
-   
-  //  $( "#words" ).position({
-  //       of: $( "#mac" ),
-  //       my: "right"+rAdj+ " center",
-  //       at: "center center" - pixAdj,
-  //       within: "#mac"
-  //     });
-
-  //          $("#words").show();
-  // }, 250);
 
 });
 
@@ -89,9 +73,9 @@ d3.select("#homeLbl").classed("scrollTextStyle", true)
 
 
 
-                            homeBox()
-                             makeChart();
-                            buildSeparator();
+                          
+                             //delauney triangulation
+                            // buildSeparator();
 
                  
 
@@ -126,6 +110,9 @@ $("#syntaxTT").position({
   at: "center bottom",
   collision: "none"
 })
+
+
+
 
 
 }

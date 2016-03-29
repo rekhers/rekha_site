@@ -27,19 +27,22 @@
   height: 120%;
   stroke: #b53f2c;
 
-
   circle{
     stroke: #b53f2c;
     fill: white;
     cursor: pointer;
-    stroke-width: 4px;
+    stroke-width: 2.5px;
+  }
+
+  line{
+    stroke-width: 2.5px;
   }
 
   .activeCircle{
    stroke: #b53f2c;
     fill: gainsboro;
     cursor: pointer;
-    stroke-width: 4px;
+    stroke-width: 2.5px;
 
   }
 
@@ -374,9 +377,88 @@ rect:hover{
 
 #projects{
     // background: gba(0, 0, 0, 0.25);
+display: flex;
+flex-direction: column;
+#boxRow{
+  // position: relative;
+  // top: 50vh;
+  // left: -20vw;
+   width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  // height: auto;
+  position: relative;
+
+  .projBox{
+
+    .projTitle{
+          font-family: 'Muli', sans-serif;
+          font-size: 1.5vw;
+          // margin-left: 2%;
+          text-align: center;
+          margin-top: 3%;
+          font-weight: 600;
+    }
+
+    margin-left: -10%;
+    margin-top: 5vh;
+    border: 1px solid black;
+    width: 30vw;
+    height: 60vh;
+    background-color: gainsboro;
+         box-shadow: 0 10px 6px -6px black;
+
+         &:hover{
+                       box-shadow: 10 10px 6px -20px black;
+
+         }
+
+     .thumbnail{
+      background-color: gainsboro;
+     }    
+
+    .thumbnail img{
+      padding: 0;
+      height: auto;
+      width: 50%;
+    }
+
+  }
+
+  // img{
+  //   width: 200px;
+  //   height: 200px;
+  //   z-index: 5000;
+  // }
+
+}
+
+#trapezoid {
+  display: block;
+  border-bottom: 150px solid #B58921;
+  border-right: 130px solid transparent;
+  height: 0;
+  margin-top: 5vh;
+    // margin-left: 5vw;
+
+  width: 70vw;
+
+  #projDesc{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 4%;
+    color: gainsboro;
+    font-size: 1.2vw;
+    font-family: 'Muli', sans-serif;
+  }
+}
+  
+
   height: 100vh;
   width: 100%;
-  background-color: gray;
+  background-color: #4A4A4A;
 display: flex;
 
       #projectT{
@@ -400,6 +482,7 @@ display: flex;
 // div{
 //   display: inline-block;
 // }
+
 
 
 #ilParent{
@@ -604,21 +687,49 @@ path{
 
 }
 
+.iconRow{
+  position:relative;
+  top: 6vh;
+  left: 15vw;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+  a{
+    text-decoration: none;
+       color: gainsboro;
+
+  }
+  a:hover{
+    color: #002f4b;
+  }
+
+}
+
+
+
 #contact{
-  height: 20%;
+  background-color: #692413;
+  height: 25vh;
 width: 100%;
  svg {
+  background-color: gainsboro;
         height: 100%;
     
         width: 100%;
         z-index: -100;
+        // background-color: #692413;
+                // opacity: .85;
+
       }
 
       path {
 
-        fill: rgba(0, 0, 0, 0.75);
-        stroke: gainsboro;
-        stroke-width: .3px;
+        // fill: rgba(0, 0, 0, 0.75);
+        fill: gainsboro;
+        stroke: #454b59;
+        stroke-width: .7px;
       }
 
 }
