@@ -55,9 +55,15 @@ var json = {"name": "skills",
          }
       ]
       },
-       {"name": "server side",
+       {"name": "server side", 
        "children": [
-          {"name": "node.js", "size": 100},
+          {"name": "node.js", 
+            "children": [
+              {"name": "npm", "size": 70, "chY": [1, 1, 3, 4, 5]},
+             {"name": "express", "size": 50, "chY": [1, 2, 4, 3, 4]}
+
+            ]
+        },
           {"name": "db", 
             "children": [
               {"name": "mongoDB", "chY": [1, 1, 3, 4, 5], "size": 50},

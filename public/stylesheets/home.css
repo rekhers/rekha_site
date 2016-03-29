@@ -273,6 +273,26 @@
   background-color: gainsboro;
   box-shadow: 0 10px 6px -6px black;
 }
+.container-fluid #projects #boxRow .projBox #ghLink1 {
+  position: relative;
+  top: -3vh;
+  left: 26vw;
+  color: #002f4b;
+}
+.container-fluid #projects #boxRow .projBox #ghLink1:hover {
+  text-decoration: none;
+  color: steelblue;
+}
+.container-fluid #projects #boxRow .projBox #ghLink2 {
+  position: relative;
+  top: -1vh;
+  left: 26vw;
+  color: #002f4b;
+}
+.container-fluid #projects #boxRow .projBox #ghLink2:hover {
+  text-decoration: none;
+  color: steelblue;
+}
 .container-fluid #projects #boxRow .projBox .projTitle {
   font-family: 'Muli', sans-serif;
   font-size: 1.5vw;
@@ -280,9 +300,6 @@
   margin-top: 3%;
   font-weight: 600;
   margin-bottom: 2%;
-}
-.container-fluid #projects #boxRow .projBox:hover {
-  box-shadow: 10 10px 6px -20px black;
 }
 .container-fluid #projects #boxRow .projBox ul {
   width: 80%;
@@ -319,6 +336,13 @@
   color: gainsboro;
   font-size: 1.2vw;
   font-family: 'Muli', sans-serif;
+}
+.container-fluid #projects #trapezoid #projDesc a {
+  color: #002f4b;
+  font-weight: bold;
+}
+.container-fluid #projects #trapezoid #projDesc a:hover {
+  color: steelblue;
 }
 .container-fluid #about {
   height: 100vh;
