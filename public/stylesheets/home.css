@@ -274,9 +274,7 @@
   box-shadow: 0 10px 6px -6px black;
 }
 .container-fluid #projects #boxRow .projBox #ghLink1 {
-  position: relative;
-  top: -3vh;
-  left: 26vw;
+  position: absolute;
   color: #002f4b;
 }
 .container-fluid #projects #boxRow .projBox #ghLink1:hover {
@@ -284,9 +282,7 @@
   color: steelblue;
 }
 .container-fluid #projects #boxRow .projBox #ghLink2 {
-  position: relative;
-  top: -1vh;
-  left: 26vw;
+  position: absolute;
   color: #002f4b;
 }
 .container-fluid #projects #boxRow .projBox #ghLink2:hover {

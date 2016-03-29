@@ -43,7 +43,19 @@ $("#headHolder img").css("top", pos.top + five)
 
 }
 
+$("#ghLink1").position({
+  of: $("#twitter"),
+        my: "right bottom",
+        at: "right-13 bottom-5",
+        collision: "none"
+})
 
+$("#ghLink2").position({
+     of: $("#politics"),
+        my: "right bottom",
+        at: "right-13 bottom-5",
+        collision: "none"
+})
 
 
 
@@ -92,6 +104,20 @@ var five = .12 * $("#headHolder").innerHeight();
 var pos = $("#headHolder").position();
 $("#headHolder img").css("top", pos.top + five)
 }
+
+$("#ghLink1").position({
+  of: $("#twitter"),
+        my: "right bottom",
+        at: "right-13 bottom-5",
+        collision: "none"
+})
+
+$("#ghLink2").position({
+     of: $("#politics"),
+        my: "right bottom",
+        at: "right-13 bottom-5",
+        collision: "none"
+})
 
  $("#sbtt").position({
         of: $("#sunburst"),
