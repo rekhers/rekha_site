@@ -209,7 +209,8 @@
   stroke-width: 3px;
 }
 .container-fluid #syntaxTree .node text {
-  font: 0.9vw sans-serif;
+  font-size: .78vw;
+  font-weight: 400;
   fill: #FFF;
 }
 .container-fluid #syntaxTree .link {
@@ -326,11 +327,11 @@
   width: 70vw;
 }
 .container-fluid #projects #trapezoid #projDesc {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 2%;
   padding-top: 4%;
+  position: relative;
   color: gainsboro;
-  font-size: 1.2vw;
+  font-size: .9vw;
   font-family: 'Muli', sans-serif;
 }
 .container-fluid #projects #trapezoid #projDesc a {
@@ -449,8 +450,9 @@
   z-index: 100;
   stroke: #FFF;
   stroke-width: 1px;
-  margin-top: 5%;
-  margin-left: 7%;
+  position: relative;
+  margin-left: 10%;
+  margin-top: 7%;
 }
 .container-fluid #about #ilParent #sunburst text {
   fill: steelblue;
@@ -503,4 +505,9 @@
   fill: gainsboro;
   stroke: #454b59;
   stroke-width: .7px;
+}
+@media (min-width: 1000px) {
+  #projDesc {
+    color: green;
+  }
 }
