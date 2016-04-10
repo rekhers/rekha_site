@@ -253,13 +253,14 @@
 }
 .container-fluid #projects {
   flex-direction: column;
-  height: 107vh;
+  height: auto;
   width: 100%;
   background-color: #4A4A4A;
   display: flex;
 }
 .container-fluid #projects #boxRow {
   width: 100%;
+  margin-bottom: 5vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -268,9 +269,10 @@
 .container-fluid #projects #boxRow .projBox {
   margin-left: -10%;
   margin-top: 5vh;
+  padding-bottom: 2vh;
   border: 1px solid black;
   width: 30vw;
-  height: 65vh;
+  height: auto;
   background-color: gainsboro;
   box-shadow: 0 10px 6px -6px black;
 }
@@ -452,7 +454,7 @@
   stroke-width: 1px;
   position: relative;
   margin-left: 10%;
-  margin-top: 7%;
+  margin-top: 3%;
 }
 .container-fluid #about #ilParent #sunburst text {
   fill: steelblue;
