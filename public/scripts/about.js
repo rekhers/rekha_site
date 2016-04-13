@@ -78,7 +78,7 @@ var json = {"name": "skills",
           //800
       {"name": "concepts & practices",
       "children": [
-        {"name": "OOP", "size": 100, "chY": [2, , 4, 3, 4]},
+        {"name": "OOP", "size": 100, "chY": [2, 3, 4, 3, 4]},
         {"name": "Agile", "size": 100, "chY": [2, 2, 4, 5, 5]},
         {"name": "TDD", "size": 100, "chY": [2, 2, 4, 3, 4]},
         {"name": "functional programming", "size": 100, "chY": [2, 2, 4, 3, 4]},
